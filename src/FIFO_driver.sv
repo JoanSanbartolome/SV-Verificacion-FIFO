@@ -18,6 +18,9 @@ class FIFO_Driver#(
             
             @(driver_interface.neg_event); // Reseta a nivel bajo en los flancos de bajada del reloj
             driver_interface.neg_event.rst_a <= 1'b1;
+            driver_interface.tx.data_in <= 1'b0; // Inicializa las señales del duv
+            driver_interface.tx.rd_en   <= 1'b0;
+            driver_interface.tx.wr_en   <= 1'b0;
             @(driver_interface.neg_event);
             driver_interface.neg_event.rst_a <= 1'b0;
             repeat(3)begin

@@ -2,4 +2,4 @@
 ../src/FIFO_no_sintetizable.sv
 ../src/fifo_if.sv
 ../src/FIFO_top_duv.sv
-../src/fifo_tb.sv 
+../src/FIFO_tb.sv 
