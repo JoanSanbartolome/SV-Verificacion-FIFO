@@ -3,7 +3,6 @@ class RCSG_base #(
     parameter int DEPTH = 16
 ) ;
 //introducid vuestro código
-    virtual fifo_if intf_fifo;
 //Propiedades
 // 1.1 para datos
     rand bit [WIDTH-1:0]data_in;
@@ -11,20 +10,19 @@ class RCSG_base #(
     rand bit rd_en;
     rand bit wr_en;
 // 2  constraint para datos
-    constraint dt_c {data_in inside {[0:2**WIDTH-1]};};
+    constraint dt_c {data_in inside {[0:$]};};
 // 3 propiedad para clear
     bit clr;
 // 4 variable estática de grado de llenado
-    static int [DEPTH-1:0] use_dw;
+    static bit [$clog2(DEPTH+1)-1:0] use_dw;
 // 5.1 constraint que controle que no hay lecturas solo cuando la FIFO esta vacia
-    constraint rd_c {use_dw == 0 -> rd_en == 0;};
+    constraint rd_c {use_dw == 0 -> (rd_en == 0 || wr_en == 1);}; // prohibe las lecturas permitiendo Rd y Wr a la vez
 //5.2 constraint que controle que no hay escrituras solo cuando la FIFO está llena
-    constraint wr_c {use_dw == DEPTH -> wr_en == 0;};
+    constraint wr_c {use_dw == DEPTH -> (wr_en == 0 || rd_en == 1);};
 //metodos
 //1 constructor
-    function new(virtual fifo_if intf_fifo);
+    function new();
         this.clr = 0;
-        this.intf_fifo=intf_fifo;
     endfunction : new
 //2 funcion calculo del grado de llenado
     function void gradoLlenado;
@@ -43,8 +41,6 @@ class RCSG_base #(
     endfunction
 //4 funcion post_randomize
     function void post_randomize();
-      begin
         gradoLlenado();
-      end
     endfunction
 endclass

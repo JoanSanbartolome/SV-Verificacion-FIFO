@@ -13,8 +13,8 @@ class RCSG_subir #(
 
     constraint llenar_c {{rd_en,wr_en} dist {0 := 1, 1 := 7, 2 := 1, 3 := 1}; };
 
-    function new(virtual fifo_if intf_fifo = null);
-        super.new(intf_fifo);
+    function new();
+        super.new();
     endfunction : new
 
 endclass //RCSG_subir extends RCSG_base

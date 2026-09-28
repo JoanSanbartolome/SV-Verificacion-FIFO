@@ -1,6 +1,6 @@
 module FIFO_top_duv #(
-    parameter int WIDTH = 32,
-    parameter int DEPTH = 16
+    parameter int WIDTH = 8,
+    parameter int DEPTH = 32
 ) (
     fifo_if.duv bus  // El puerto se llama "bus"
 );

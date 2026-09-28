@@ -16,9 +16,9 @@ module FIFO_tb();
   
   //Declaracion de bloques
   fifo_if #(DATA_WIDTH,DEPTH) interfaz1(.clk(clk));
+
   FIFO_Testaleatorio1 #(DATA_WIDTH,DEPTH) test1;
   
-
   // 3. Instanciación del DUV
   FIFO_top_duv #(.WIDTH(DATA_WIDTH), .DEPTH(DEPTH)) duv (.bus(interfaz1));
 
@@ -42,7 +42,7 @@ module FIFO_tb();
     // Finalizar la simulación
     #2000;
     $display("Simulacion finalizada exitosamente.");
-    $finish;
+    $finish
   end
 
 endmodule
