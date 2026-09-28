@@ -1,88 +1,19 @@
-# //  Questa Sim-64
-# //  Version 2025.1_2 win64 Apr  7 2025
-# //
-# // Unpublished work. Copyright 2025 Siemens
-# //
-# // This material contains trade secrets or otherwise confidential information
-# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
-# // "SISW"), or its licensors. Access to and use of this information is strictly
-# // limited as set forth in the Customer's applicable agreements with SISW.
-# //
-# // This material may not be copied, distributed, or otherwise disclosed outside
-# // of the Customer's facilities without the express written permission of SISW,
-# // and may not be used in any way not expressly authorized by SISW.
-# //
 # do Sim.do
-# 7
+# 5
 # Sim: load design
-# vsim -voptargs="+acc" -msgmode both -assertdebug -wlfdeleteonquit work.fifo_tb 
-# Start time: 21:29:23 on Sep 26,2026
+# vsim -voptargs="+acc" -msgmode both -assertdebug -wlfdeleteonquit work.ddfms 
+# Start time: 12:46:55 on Sep 28,2026
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: mique  Hostname: SURFACE-LAPTOP  ProcessID: 6416
-#           Attempting to use alternate WLF file "./wlftw6d30e".
+#           Attempting to use alternate WLF file "./wlftfnb84h".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftw6d30e
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# ** Warning: ../src/fifo_tb.sv(4): (vopt-2605) empty port name in port list.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=4.
-# Loading sv_std.std
-# Loading work.fifo_if(fast)
-# Loading work.utilidades_pkg(fast)
-# Loading work.fifo_tb_sv_unit(fast)
-# Loading work.fifo_tb(fast)
-# Loading work.fifo_if(fast__3)
-# Loading work.FIFO_top_duv(fast)
-# Loading work.FIFO_no_sintetizable(fast)
-# Sim: load wave-file(s)
-# 1
-# Sim: log signals
-# Sim: run ...
-# Randomizacion exitosa
-# Randomizacion exitosa
-# Randomizacion exitosa
-# Randomizacion exitosa
-# Randomizacion exitosa
-# Randomizacion exitosa
-# Randomizacion exitosa
-# Randomizacion exitosa
-# 1
-run -all
-# Randomizacion exitosa
-# Randomizacion exitosa
-# Randomizacion exitosa
-# Randomizacion exitosa
-# Randomizacion exitosa
-# Randomizacion exitosa
-# Randomizacion exitosa
-# Randomizacion exitosa
-# Randomizacion exitosa
-# Randomizacion exitosa
-# Randomizacion exitosa
-# Randomizacion exitosa
-# Randomizacion bajada exitosa
-# Randomizacion bajada exitosa
-# Randomizacion bajada exitosa
-# Randomizacion bajada exitosa
-# Randomizacion bajada exitosa
-# Randomizacion bajada exitosa
-# Randomizacion bajada exitosa
-# Randomizacion bajada exitosa
-# Randomizacion bajada exitosa
-# Randomizacion bajada exitosa
-# Randomizacion bajada exitosa
-# Randomizacion bajada exitosa
-# Randomizacion bajada exitosa
-# Randomizacion bajada exitosa
-# Randomizacion bajada exitosa
-# Randomizacion bajada exitosa
-# Randomizacion bajada exitosa
-# Randomizacion bajada exitosa
-# Randomizacion bajada exitosa
-# Randomizacion bajada exitosa
-# Simulacion finalizada exitosamente.
-# ** Note: $finish    : ../src/fifo_tb.sv(66)
-#    Time: 6450 ns  Iteration: 0  Instance: /fifo_tb
-# 1
-# Break in Module fifo_tb at ../src/fifo_tb.sv line 66
-add wave -position insertpoint sim:/fifo_tb/if_fifo/*
+#           Using alternate file: ./wlftfnb84h
+# ** Error: (vsim-3170) Could not find 'ddfms'.
+#         Searched libraries:
+#             C:/Users/josan/proyectos/Practicas-DMA/sim/work
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./Sim.do PAUSED at line 18
+# End time: 12:47:11 on Sep 28,2026, Elapsed time: 0:00:16
+# Errors: 1, Warnings: 2
