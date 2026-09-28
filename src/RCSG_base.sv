@@ -6,12 +6,12 @@ class RCSG_base #(
     virtual fifo_if intf_fifo;
 //Propiedades
 // 1.1 para datos
-    rand bit [WIDTH-1:0] data_in;
+    rand bit [WIDTH-1:0]data_in;
 // 1.2 para lectura y escritura
     rand bit rd_en;
     rand bit wr_en;
 // 2  constraint para datos
-    constraint dt_c {data_in inside {[WIDTH-1:0]};};
+    constraint dt_c {data_in inside {[0:2**WIDTH-1]};};
 // 3 propiedad para clear
     bit clr;
 // 4 variable estática de grado de llenado
@@ -38,7 +38,7 @@ class RCSG_base #(
     endfunction
 
 //3 funcion reset del grado de llenado
-    static function gradoLlenado_rst;
+    static function void gradoLlenado_rst;
         use_dw = 0;
     endfunction
 //4 funcion post_randomize

@@ -1,19 +1,25 @@
 module FIFO_top_duv #(
     parameter int WIDTH = 32,
     parameter int DEPTH = 16
-) (fifo_if.duv bus) ;
-
-// Instancia del DUV
-FIFO_no_sintetizable DUV (
-                .CLOCK(fifo_if.clk),
-               .RESET_N(fifo_if.rst_a),
-               .DATA_IN(fifo_if.data_in),
-               .READ(fifo_if.rd_en),
-               .WRITE(fifo_if.wr_en),
-               .CLEAR_N(fifo_if.rst_s),
-               .F_FULL_N(fifo_if.lleno),
-               .F_EMPTY_N(fifo_if.vacio),
-               .USE_DW(fifo_if.use_dw),
-               .DATA_OUT(fifo_if.data_out)
+) (
+    fifo_if.duv bus  // El puerto se llama "bus"
 );
+
+  // Instancia del DUV
+  FIFO_no_sintetizable #(
+      .WIDTH(WIDTH),
+      .DEPTH(DEPTH)
+  ) duv (
+      .CLOCK    (bus.clk),
+      .RESET_N  (bus.rst_a),
+      .DATA_IN  (bus.data_in),
+      .READ     (bus.rd_en),
+      .WRITE    (bus.wr_en),
+      .CLEAR_N  (bus.rst_s),
+      .F_FULL_N (bus.lleno),
+      .F_EMPTY_N(bus.vacio),
+      .USE_DW   (bus.use_dw),
+      .DATA_OUT (bus.data_out)
+  );
+
 endmodule

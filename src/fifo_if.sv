@@ -63,6 +63,7 @@ interface fifo_if(input bit clk);   //cabecera del interfaz. Recorda con dos par
     //5.3 definición del modport driver
     //os proporciono el código
     modport driver (
+        input    clk,
         clocking tx,
         clocking neg_event
     );

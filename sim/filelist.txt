@@ -1,7 +1,5 @@
-../src/FIFO_no_sintetizable.sv
-../src/FIFO_tb_v0.sv
 ../src/utilidades_pkg.sv
+../src/FIFO_no_sintetizable.sv
 ../src/fifo_if.sv
-../src/FIFO_tb.sv
-../src/RAM_DP_vlg_tst.sv
-../src/RAM_DP.sv
+../src/FIFO_top_duv.sv
+../src/fifo_tb.sv 

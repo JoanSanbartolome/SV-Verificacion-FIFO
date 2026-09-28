@@ -1,32 +1,19 @@
 # do Sim.do
-# 14
+# 5
 # Sim: load design
-# vsim -voptargs="+acc" -msgmode both -assertdebug -wlfdeleteonquit work.RAM_DP_vlg_tst 
-# Start time: 13:24:57 on Sep 24,2026
-# Loading sv_std.std
-# Loading work.RAM_DP_vlg_tst
-# Loading work.RAM_DP
-# ** Warning: (vsim-8311) System Verilog assertions are supported only in Questasim.
-# Sim: load wave-file(s)
-# 1
-# Sim: log signals
-# Sim: run ...
-#  escribo unos valores
-# ** Warning: (vsim-8233) ../src/RAM_DP.sv(18): Index xxxxx into array dimension [31:0] is out of bounds.
-#    Time: 10 ns  Iteration: 1  Instance: /RAM_DP_vlg_tst/i1
-# ** Warning: (vsim-8233) ../src/RAM_DP.sv(18): Index xxxxx into array dimension [31:0] is out of bounds.
-#    Time: 30 ns  Iteration: 1  Instance: /RAM_DP_vlg_tst/i1
-# ** Warning: (vsim-8233) ../src/RAM_DP.sv(18): Index xxxxx into array dimension [31:0] is out of bounds.
-#    Time: 50 ns  Iteration: 1  Instance: /RAM_DP_vlg_tst/i1
-# ** Warning: (vsim-8233) ../src/RAM_DP.sv(18): Index xxxxx into array dimension [31:0] is out of bounds.
-#    Time: 70 ns  Iteration: 1  Instance: /RAM_DP_vlg_tst/i1
-# leo de la posicion 7
-# ** Warning: (vsim-8233) ../src/RAM_DP.sv(18): Index xxxxx into array dimension [31:0] is out of bounds.
-#    Time: 90 ns  Iteration: 1  Instance: /RAM_DP_vlg_tst/i1
-# escribo y leo de la posicion 14
-# ** Info: lee primero y escribe despues
-#    Time: 190 ns  Scope: RAM_DP_vlg_tst File: ../src/RAM_DP_vlg_tst.sv Line: 72
-# ** Note: $stop    : ../src/RAM_DP_vlg_tst.sv(80)
-#    Time: 250 ns  Iteration: 1  Instance: /RAM_DP_vlg_tst
-# Break in Module RAM_DP_vlg_tst at ../src/RAM_DP_vlg_tst.sv line 80
-# 1
+# vsim -voptargs="+acc" -msgmode both -assertdebug -wlfdeleteonquit work.ddfms 
+# Start time: 12:46:55 on Sep 28,2026
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: mique  Hostname: SURFACE-LAPTOP  ProcessID: 6416
+#           Attempting to use alternate WLF file "./wlftfnb84h".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftfnb84h
+# ** Error: (vsim-3170) Could not find 'ddfms'.
+#         Searched libraries:
+#             C:/Users/josan/proyectos/Practicas-DMA/sim/work
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./Sim.do PAUSED at line 18
+# End time: 12:47:11 on Sep 28,2026, Elapsed time: 0:00:16
+# Errors: 1, Warnings: 2
