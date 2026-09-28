@@ -1,21 +1,32 @@
 QuestaSim-64 qrun 2025.1_2 Utility 2025.04 Apr  7 2025
-Start time: 16:32:43 on Sep 15,2026
+Start time: 13:58:17 on Sep 28,2026
 qrun -f qrun.f 
 Creating library 'qrun.out/work'.
+** Warning: (vlib-34) Library already exists at "qrun.out/work".
+Errors: 0, Warnings: 1
 QuestaSim-64 vlog 2025.1_2 Compiler 2025.04 Apr  7 2025
-Start time: 16:32:44 on Sep 15,2026
-vlog -work qrun.out/work "+incdir+c:/questasim64_2025.1_2/verilog_src/uvm-1.1d/src" -ccflags "-Wno-return-type" -ccflags "-DQUESTA" c:/questasim64_2025.1_2/verilog_src/uvm-1.1d/src/dpi/uvm_dpi.cc c:/questasim64_2025.1_2/verilog_src/uvm-1.1d/src/uvm_pkg.sv c:/questasim64_2025.1_2/verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv -csession=incr 
+Start time: 13:58:17 on Sep 28,2026
+vlog -work qrun.out/work "+incdir+C:/questasim64_2025.1_2/verilog_src/uvm-1.1d/src" -ccflags "-Wno-return-type" -ccflags "-DQUESTA" C:/questasim64_2025.1_2/verilog_src/uvm-1.1d/src/dpi/uvm_dpi.cc C:/questasim64_2025.1_2/verilog_src/uvm-1.1d/src/uvm_pkg.sv C:/questasim64_2025.1_2/verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv -csession=incr 
 -- Compiling package uvm_pkg (uvm-1.1d Built-in)
 -- Compiling package questa_uvm_pkg
 -- Importing package uvm_pkg (uvm-1.1d Built-in)
 
 Top level modules:
 	--none--
-** Fatal: (vlog-7019) Can't locate a C/C++ compiler for 'DPI C/C++ File Compilation'.
-Verilog Compiler exiting
-End time: 16:32:45 on Sep 15,2026, Elapsed time: 0:00:01
+** Note: (vlog-7082) For C/C++ auto compile, choosing compiler C:\Strawberry\c\bin\g++.exe set from the PATH environment variable.
+-- Compiling DPI/PLI C++ file C:/questasim64_2025.1_2/verilog_src/uvm-1.1d/src/dpi/uvm_dpi.cc
+** Error: (vlog-70) Compilation of the C/C++ src files failed with the error messages given below.
+
+In file included from C:/questasim64_2025.1_2/verilog_src/uvm-1.1d/src/dpi/uvm_dpi.cc:34:
+C:/questasim64_2025.1_2/verilog_src/uvm-1.1d/src/dpi/uvm_regex.cc:25:10: fatal error: regex.h: No such file or directory
+   25 | #include <regex.h>
+      |          ^~~~~~~~~
+compilation terminated.
+
+End time: 13:58:21 on Sep 28,2026, Elapsed time: 0:00:04
 Errors: 1, Warnings: 0
-End time: 16:32:45 on Sep 15,2026, Elapsed time: 0:00:02
+End time: 13:58:21 on Sep 28,2026, Elapsed time: 0:00:04
 *** Summary *********************************************
     qrun: Errors:   0, Warnings:   0
-  Totals: Errors:   0, Warnings:   0
+    vlib: Errors:   0, Warnings:   1
+  Totals: Errors:   0, Warnings:   1

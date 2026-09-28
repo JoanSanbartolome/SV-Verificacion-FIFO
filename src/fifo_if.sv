@@ -1,9 +1,12 @@
 `timescale 1 ns/ 1 ps //escala de tiempos de 1 ns y una precisón de 1 ps.
 
-interface fifo_if(input bit clk);   //cabecera del interfaz. Recorda con dos parámetros y un puerto
-                                    // de entrada
-    parameter  WIDTH = 32;
-    parameter  DEPTH = 12;
+interface fifo_if #(    
+    parameter int WIDTH = 32,
+    parameter int DEPTH = 16)
+    (
+    input bit clk
+    );   //cabecera del interfaz. Recorda con dos parámetros y un puerto de entrada
+    
     localparam ADDRESS =$clog2(DEPTH);
 
     logic       rst_a       ;

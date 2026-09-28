@@ -34,12 +34,8 @@ class FIFO_Driver#(
     task secuencia_llenado;
         begin
             @(driver_interface.tx);
-            driver_interface.tx.rst_s   <= 1'b1;
-
-            if(handler_subir.randomize() == 1)
-                $display("Randomizacion exitosa");
-            else
-                $display("Randomizacion fallida");
+            assert(handler_subir.randomize())
+            else $fatal("Randomization failed in sec_item1");
 
             @(driver_interface.tx);
             driver_interface.tx.data_in <= handler_subir.data_in;
@@ -53,13 +49,9 @@ class FIFO_Driver#(
     task secuencia_vaciado;
         begin
             @(driver_interface.tx);
-            driver_interface.tx.rst_s   <= 1'b1;
-
-            if(handler_bajar.randomize() == 1)
-                $display("Randomizacion exitosa");
-            else
-                $display("Randomizacion fallida");
-
+            assert(handler_bajar.randomize())
+            else $fatal("Randomization failed in sec_item1");
+                
             @(driver_interface.tx);
             driver_interface.tx.data_in <= handler_bajar.data_in;
             driver_interface.tx.rd_en   <= handler_bajar.rd_en;

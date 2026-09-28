@@ -1,5 +1,5 @@
 $date
-	Mon Sep 28 12:44:46 2026
+	Mon Sep 28 15:16:32 2026
 $end
 $version
 	QuestaSim Version 2025.1_2
@@ -8,7 +8,7 @@ $timescale
 	1ps
 $end
 
-$scope module fifo_tb $end
+$scope module FIFO_tb $end
 
 $scope module duv $end
 $var parameter 32 ! WIDTH $end

@@ -13,10 +13,11 @@ module FIFO_tb();
     clk = 0;
     forever #50 clk = ~clk;
   end
-
+  
   //Declaracion de bloques
+  fifo_if #(DATA_WIDTH,DEPTH) interfaz1(.clk(clk));
   FIFO_Testaleatorio1 #(DATA_WIDTH,DEPTH) test1;
-  fifo_if interfaz1(.clk(clk));
+  
 
   // 3. Instanciación del DUV
   FIFO_top_duv #(.WIDTH(DATA_WIDTH), .DEPTH(DEPTH)) duv (.bus(interfaz1));
@@ -31,8 +32,10 @@ module FIFO_tb();
   initial begin
     // Instanciación y ejecución del Test
     test1 = new(interfaz1);
+    
     //Inicializacion
     test1.reset_duv();
+
     //Lanzamiento de casos
     test1.test_duv();
 
