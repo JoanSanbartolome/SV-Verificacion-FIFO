@@ -2,8 +2,8 @@ class FIFO_Driver#(
     parameter int WIDTH = 32,
     parameter int DEPTH = 16
 );
-    utilidades_pkg::RCSG_subir handler_subir;
-    utilidades_pkg::RCSG_bajar handler_bajar;
+    utilidades_pkg::RCSG_subir #(WIDTH,DEPTH) handler_subir;
+    utilidades_pkg::RCSG_bajar #(WIDTH,DEPTH) handler_bajar;
 
     virtual fifo_if#(WIDTH,DEPTH).driver driver_interface;
 
