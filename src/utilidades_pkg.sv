@@ -1,8 +1,7 @@
 //insertar código que define una escala de tiempos de 1 ns y una precisón de 1 ps.
  `timescale 1ns/1ps
-package utilidades_pkg;
- 
- 
+package utilidades_pkg; 
+
 typedef class RCSG_base;
 typedef class RCSG_subir;
 typedef class RCSG_bajar;
