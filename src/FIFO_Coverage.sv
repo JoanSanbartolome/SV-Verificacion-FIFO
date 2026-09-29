@@ -7,13 +7,39 @@ class FIFO_Coverage #(
   
   mailbox #(FIFO_Transaction #(WIDTH, DEPTH)) cov_mbx;
   
-  covergroup fifo_cover with function sample(FIFO_Transaction #(WIDTH,DEPTH) tr);
-    grado_llenado:coverpoint tr.use_dw
-        {bins intermedio[] = {[1:31]};
+  covergroup Cobertura_funcional @(posedge clk);
+    grado_llenado:coverpoint use_dw
+      {
+        bins intermedio[] = {[1:31]};
         bins corner_case_vacio ={0};
         bins corner_case_lleno ={32};
-        }
-//escribid vuestro código aquí
+      }
+   
+    flags: coverpoint {vacio,lleno}
+      {
+        bins flag_vacio = {1};
+        bins flag_lleno = {2};
+        bins flag_intermedio = {3};
+        illegal_bins flags_no_posibles ={0};
+      }
+ 
+    rw:coverpoint {rd_en,wr_en}
+      {
+        bins solo_lectura = {2};
+        bins solo_escritura = {1};
+        bins lectura_escritura= {3};
+        bins nada = default;
+      }
+/*      datos_entrada: coverpoint DATA_IN
+      {bins datos_posibles = {[0:19]};
+  // ignore_bins datos_no_posibles ={[20:255]};
+  }
+*/
+    estados_normales:cross grado_llenado, rw ;
+    casos_especiales:cross  rw, flags 
+      {bins casos_intermedios = binsof(flags.flag_intermedio);  
+       ignore_bins no_admisible = (binsof(flags.flag_lleno)&& binsof(rw.solo_escritura))|| (binsof(flags.flag_vacio)&& binsof(rw.solo_lectura));
+      }
 endgroup;
   
   // 5. Definición del constructor (new)

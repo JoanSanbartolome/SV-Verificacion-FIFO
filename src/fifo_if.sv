@@ -27,6 +27,11 @@ interface fifo_if #(
     input #1ns      vacio;
     input #1ns      data_out;
     input #1ns      use_dw;
+    input #1ns      rst_a,
+    input #1ns      rst_s,
+    input #1ns      data_in,
+    input #1ns      wr_en,
+    input #1ns      rd_en,
 
     endclocking:px;
 
@@ -45,7 +50,6 @@ interface fifo_if #(
     endclocking:neg_event;
 
     //5.1 definición del modport duv
-    //añadir vuestro código, absolutamente necesario para esta primera sesion
     modport duv (
         input     clk,
         input     rst_a,
@@ -60,11 +64,8 @@ interface fifo_if #(
         output    lleno
     );
 
-    //5.2 definición del modport monitor
+    //5.2 definición del modport monitor, recoje todas las entradas y salidas del duv
     modport monitor (
-        input     rst_a,
-        input     wr_en,
-        input     rd_en,
         clocking px
     );
 

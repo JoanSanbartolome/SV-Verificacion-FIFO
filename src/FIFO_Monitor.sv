@@ -10,12 +10,12 @@ class FIFO_Monitor #(
     mailbox #(FIFO_Transaction) mbx;
 
 //IMPORTANTE: Necesitamos un puntero a la interfaz, con modport de tipo monitor. Dicho modport lo teníamos pendiente de la primera sesión y esto nos obliga ahora a modificar el fichero donde tengamos definida la interfaz, para añadir ese modport y el clocking block del cual deriva. Tomando como referencia las explicaciones de la primera sesión y los códigos aportados, completad ese modport en la interfaz y luego cread en el monitor el puntero(virtual) correspondiente.
-    virtual fifo_if.monitor#(WIDTH,DEPTH) vif_monitor;
+    virtual fifo_if#(WIDTH,DEPTH).monitor vif_monitor;
 
 //Declararemos el handle de la clase realizada en el paso anterior (de cobertura funcional)
     utilidades_pkg::FIFO_Coverage #(WIDTH,DEPTH) cov_handle;
 //Definición del constructor, que tendrá como argumento la interfaz virtual de modport monitor, y se construirán el mailbox, la transacción original (la clonada se construye en la propia función de clonación) y, por supuesto, el objeto coverage que hayamos realizado en el paso anterior.
-    function new(virtual fifo_if#(WIDTH,DEPTH) vif_monitor);
+    function new(virtual fifo_if#(WIDTH,DEPTH).monitor vif_monitor);
         this.vif_monitor = vif_monitor;
         mbx = new();
         transaction_handle = new();

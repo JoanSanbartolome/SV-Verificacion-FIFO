@@ -16,13 +16,13 @@
 # 7
 # Sim: load design
 # vsim -voptargs="+acc" -msgmode both -assertdebug -wlfdeleteonquit work.FIFO_tb 
-# Start time: 13:02:32 on Sep 29,2026
+# Start time: 16:42:50 on Sep 29,2026
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: mique  Hostname: SURFACE-LAPTOP  ProcessID: 6416
-#           Attempting to use alternate WLF file "./wlftjfw8it".
+#           Attempting to use alternate WLF file "./wlftikcd54".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftjfw8it
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+#           Using alternate file: ./wlftikcd54
+# ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
 # ** Warning: ../src/FIFO_Monitor.sv(13): (vopt-2277) Use of the form 'interface_name.modport #(params)' is an extension to SystemVerilog
 # ** Warning: ../src/FIFO_tb.sv(4): (vopt-2605) empty port name in port list.
@@ -305,8 +305,5 @@ run -all
 #    Time: 1202550 ns  Iteration: 0  Instance: /FIFO_tb
 # 1
 # Break in Module FIFO_tb at ../src/FIFO_tb.sv line 45
-add wave -position insertpoint sim:/utilidades_pkg::FIFO_Coverage__1::run/*
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/utilidades_pkg::FIFO_Coverage__1::run/*'.
-# 'FIFO_tb' has already been used. Current session name defaulting to 'FIFO_tb_1'.
-# Profiling will collect calltree information
-# Break key hit
+# End time: 16:44:55 on Sep 29,2026, Elapsed time: 0:02:05
+# Errors: 128, Warnings: 5
