@@ -16,16 +16,17 @@
 # 7
 # Sim: load design
 # vsim -voptargs="+acc" -msgmode both -assertdebug -wlfdeleteonquit work.FIFO_tb 
-# Start time: 18:49:48 on Sep 28,2026
+# Start time: 13:02:32 on Sep 29,2026
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: mique  Hostname: SURFACE-LAPTOP  ProcessID: 6416
-#           Attempting to use alternate WLF file "./wlftbdfj8d".
+#           Attempting to use alternate WLF file "./wlftjfw8it".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftbdfj8d
-# ** Note: (vsim-3812) Design is being optimized...
+#           Using alternate file: ./wlftjfw8it
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Warning: ../src/FIFO_Monitor.sv(13): (vopt-2277) Use of the form 'interface_name.modport #(params)' is an extension to SystemVerilog
 # ** Warning: ../src/FIFO_tb.sv(4): (vopt-2605) empty port name in port list.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=4.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=5.
 # Loading sv_std.std
 # Loading work.fifo_if(fast)
 # Loading work.utilidades_pkg(fast)
@@ -40,20 +41,7 @@
 # Sim: run ...
 # Secuencia 1: Llenado
 # 1
-restart
-# Closing VCD file "fifo_tb_all.vcd"
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt5
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=2.
-# Loading work.fifo_if(fast)
-# Loading work.utilidades_pkg(fast)
-# Loading work.FIFO_tb_sv_unit(fast)
-# Loading work.FIFO_tb(fast)
-# Loading work.fifo_if(fast__2)
-# Loading work.FIFO_top_duv(fast)
-# Loading work.FIFO_no_sintetizable(fast)
 run -all
-# Secuencia 1: Llenado
 # ** Error: estas escribiendo sobre una fifo llena
 #    Time: 4950 ns Started: 4950 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
 # ** Error: estas escribiendo sobre una fifo llena
@@ -313,9 +301,12 @@ run -all
 #    Time: 633450 ns Started: 633450 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # FIN DEL TEST
 # Simulacion finalizada exitosamente.
-add log -class sim:/utilidades_pkg::RCSG_base__1
-add wave -position insertpoint sim:/utilidades_pkg::RCSG_base__1::*
-add wave -position insertpoint sim:/FIFO_tb/duv/duv/*
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/josan/proyectos/Practicas-DMA/sim/wave.do
-# End time: 18:59:04 on Sep 28,2026, Elapsed time: 0:09:16
-# Errors: 128, Warnings: 2
+# ** Note: $finish    : ../src/FIFO_tb.sv(45)
+#    Time: 1202550 ns  Iteration: 0  Instance: /FIFO_tb
+# 1
+# Break in Module FIFO_tb at ../src/FIFO_tb.sv line 45
+add wave -position insertpoint sim:/utilidades_pkg::FIFO_Coverage__1::run/*
+# ** UI-Msg (Warning): (vish-4014) No objects found matching '/utilidades_pkg::FIFO_Coverage__1::run/*'.
+# 'FIFO_tb' has already been used. Current session name defaulting to 'FIFO_tb_1'.
+# Profiling will collect calltree information
+# Break key hit

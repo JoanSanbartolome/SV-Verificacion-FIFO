@@ -61,7 +61,12 @@ interface fifo_if #(
     );
 
     //5.2 definición del modport monitor
-    modport monitor (clocking px);
+    modport monitor (
+        input     rst_a,
+        input     wr_en,
+        input     rd_en,
+        clocking px
+    );
 
     //5.3 definición del modport driver
     //os proporciono el código

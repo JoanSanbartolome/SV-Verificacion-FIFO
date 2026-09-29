@@ -4,7 +4,7 @@ class FIFO_Testaleatorio1#(
 );
     utilidades_pkg::FIFO_Enviroment #(WIDTH,DEPTH) enviroment; // Declaracion enviroment
 
-    function new(virtual fifo_if#(WIDTH,DEPTH) vif_driver, virtual fifo_if#(WIDTH,DEPTH).monitor vif_monitor);
+    function new(virtual fifo_if#(WIDTH,DEPTH) vif_driver, virtual fifo_if#(WIDTH,DEPTH) vif_monitor);
         enviroment = new(vif_driver, vif_monitor);
     endfunction //new()
 

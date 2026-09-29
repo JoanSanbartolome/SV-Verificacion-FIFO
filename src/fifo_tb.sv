@@ -42,7 +42,7 @@ module FIFO_tb();
     // Finalizar la simulación
     #2000;
     $display("Simulacion finalizada exitosamente.");
-    $finish
+    $finish;
   end
 
 endmodule
