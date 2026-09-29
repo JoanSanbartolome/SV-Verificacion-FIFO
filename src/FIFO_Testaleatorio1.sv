@@ -4,8 +4,8 @@ class FIFO_Testaleatorio1#(
 );
     utilidades_pkg::FIFO_Enviroment #(WIDTH,DEPTH) enviroment; // Declaracion enviroment
 
-    function new(virtual fifo_if#(WIDTH,DEPTH) vif_test);
-        enviroment = new(vif_test);
+    function new(virtual fifo_if#(WIDTH,DEPTH) vif_driver, virtual fifo_if#(WIDTH,DEPTH).monitor vif_monitor);
+        enviroment = new(vif_driver, vif_monitor);
     endfunction //new()
 
     task reset_duv;
@@ -14,6 +14,10 @@ class FIFO_Testaleatorio1#(
 
     task test_duv; // Test para verificar el duv
         begin
+            fork
+                enviroment.monitor.run();
+                enviroment.monitor.cov_handle.run();
+            join_none
             // Secuencia de llenado de la FIFO
             $display("Secuencia 1: Llenado");
             repeat (2000) begin

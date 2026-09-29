@@ -31,7 +31,7 @@ module FIFO_tb();
   // 5. Lanzamiento del test
   initial begin
     // Instanciación y ejecución del Test
-    test1 = new(interfaz1);
+    test1 = new(interfaz1, interfaz1);
     
     //Inicializacion
     test1.reset_duv();

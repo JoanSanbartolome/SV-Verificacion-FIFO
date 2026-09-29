@@ -31,6 +31,7 @@ class FIFO_Monitor #(
 
             if (vif_monitor.wren || vif_monitor.rden) begin
                 $cast(tr_copy, transaction_handle.clone());
+                tr_copy.copy(transaction_handle);
                 mbx.put(tr_copy);
             end 
         end
