@@ -27,11 +27,11 @@ interface fifo_if #(
     input #1ns      vacio;
     input #1ns      data_out;
     input #1ns      use_dw;
-    input #1ns      rst_a,
-    input #1ns      rst_s,
-    input #1ns      data_in,
-    input #1ns      wr_en,
-    input #1ns      rd_en,
+    input #1ns      rst_a;
+    input #1ns      rst_s;
+    input #1ns      data_in;
+    input #1ns      wr_en;
+    input #1ns      rd_en;
 
     endclocking:px;
 

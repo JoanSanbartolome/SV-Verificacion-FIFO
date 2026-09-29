@@ -4,36 +4,56 @@ class FIFO_Monitor #(
 );
     //Declaración de un handle para FIFO_transaction.
     utilidades_pkg::FIFO_Transaction #(WIDTH,DEPTH) transaction_handle;
-    //Declararemos un handle del mismo tipo que el anterior y que clonaremos antes de transmitirlo por el mailbox
-    utilidades_pkg::FIFO_Transaction #(WIDTH,DEPTH) tr_copy;
-    //Declaración de un mailbox: lo haremos particularizando a elementos transmitidos de tipo handle FIFO_Transaction
-    mailbox #(FIFO_Transaction) mbx;
 
-//IMPORTANTE: Necesitamos un puntero a la interfaz, con modport de tipo monitor. Dicho modport lo teníamos pendiente de la primera sesión y esto nos obliga ahora a modificar el fichero donde tengamos definida la interfaz, para añadir ese modport y el clocking block del cual deriva. Tomando como referencia las explicaciones de la primera sesión y los códigos aportados, completad ese modport en la interfaz y luego cread en el monitor el puntero(virtual) correspondiente.
+    //Declararemos un handle del mismo tipo que el anterior para cada objeto que lo va a utilizar
+    utilidades_pkg::FIFO_Transaction #(WIDTH,DEPTH) transaction_coverage;
+    //utilidades_pkg::FIFO_Transaction #(WIDTH,DEPTH) transaction_scb_in;
+    //utilidades_pkg::FIFO_Transaction #(WIDTH,DEPTH) transaction_scb_out;
+
+    //Declaración de un mailbox: lo haremos particularizando a elementos transmitidos de tipo handle FIFO_Transaction
+    mailbox #(FIFO_Transaction) mailbox_coverage;
+    mailbox #(FIFO_Transaction) mailbox_predictor;
+    mailbox #(FIFO_Transaction) mailbox_evaluator;
+
     virtual fifo_if#(WIDTH,DEPTH).monitor vif_monitor;
 
-//Declararemos el handle de la clase realizada en el paso anterior (de cobertura funcional)
-    utilidades_pkg::FIFO_Coverage #(WIDTH,DEPTH) cov_handle;
-//Definición del constructor, que tendrá como argumento la interfaz virtual de modport monitor, y se construirán el mailbox, la transacción original (la clonada se construye en la propia función de clonación) y, por supuesto, el objeto coverage que hayamos realizado en el paso anterior.
+    utilidades_pkg::FIFO_Coverage #(WIDTH,DEPTH) coverage_handle;
+    //utilidades_pkg::FIFO_Scoreboard #(WIDTH,DEPTH) score_handle;
+
+    //Definición del constructor, que tendrá como argumento la interfaz virtual de modport monitor, y se construirán el mailbox, la transacción original (la clonada se construye en la propia función de clonación) y, por supuesto, el objeto coverage que hayamos realizado en el paso anterior.
     function new(virtual fifo_if#(WIDTH,DEPTH).monitor vif_monitor);
         this.vif_monitor = vif_monitor;
-        mbx = new();
-        transaction_handle = new();
-        cov_handle = new(mbx);
-    endfunction
-//Se realizará un task en donde en un loop infinito tomaremos muestras de todas las señales pertenecientes al virtual interface de tipo monitor
-    task run();
-        forever begin
-            @(vif_monitor.px); 
-            if (!vif_monitor.rst_a) begin
-                continue;
-            end
+        mailbox_coverage    = new();
+        mailbox_predictor   = new();
+        mailbox_evaluator   = new();
 
-            if (vif_monitor.wr_en || vif_monitor.rd_en) begin
-                $cast(tr_copy, transaction_handle.clone());
-                tr_copy.copy(transaction_handle);
-                mbx.put(tr_copy);
-            end 
+        coverage_handle = new(mailbox_coverage);
+        score_handle    = new(mailbox_predictor,mailbox_evaluator);
+
+        transaction_handle  = new();
+    endfunction
+
+    task run(); 
+        begin
+            while (1) begin
+                @(vif_monitor.px);
+                
+                transaction_handle.lleno        = vif_monitor.px.lleno   ;
+                transaction_handle.vacio        = vif_monitor.px.vacio   ;
+                transaction_handle.data_out     = vif_monitor.px.data_out;
+                transaction_handle.use_dw       = vif_monitor.px.use_dw  ;
+                transaction_handle.rst_a        = vif_monitor.px.rst_a   ;
+                transaction_handle.rst_s        = vif_monitor.px.rst_s   ;
+                transaction_handle.data_in      = vif_monitor.px.data_in ;
+                transaction_handle.wr_en        = vif_monitor.px.wr_en   ;
+                transaction_handle.rd_en        = vif_monitor.px.rd_en   ;
+
+                transaction_coverage    = transaction_handle.clone();
+                //transaction_scb_in      = transaction_handle.clone();
+                //transaction_scb_out     = transaction_handle.clone();
+
+                mailbox_coverage.put(transaction_coverage);
+            end
         end
     endtask
 endclass
