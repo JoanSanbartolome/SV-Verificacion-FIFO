@@ -16,9 +16,9 @@ class RCSG_base #(
 // 4 variable estática de grado de llenado
     static bit [$clog2(DEPTH+1)-1:0] use_dw;
 // 5.1 constraint que controle que no hay lecturas solo cuando la FIFO esta vacia
-    constraint rd_c {use_dw == 0 -> (rd_en == 0 || wr_en == 1);}; // prohibe las lecturas permitiendo Rd y Wr a la vez
+    constraint rd_c {use_dw == 0 -> (rd_en == 0);};
 //5.2 constraint que controle que no hay escrituras solo cuando la FIFO está llena
-    constraint wr_c {use_dw == DEPTH -> (wr_en == 0 || rd_en == 1);};
+    constraint wr_c {use_dw == WIDTH -> (wr_en == 0);};
 //metodos
 //1 constructor
     function new();

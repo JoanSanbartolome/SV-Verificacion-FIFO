@@ -39,9 +39,6 @@ module FIFO_tb();
     //Lanzamiento de casos
     test1.test_duv();
 
-    // Finalizar la simulación
-    #2000;
-    $display("Simulacion finalizada exitosamente.");
     $finish;
   end
 
