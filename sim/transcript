@@ -16,12 +16,12 @@
 # 7
 # Sim: load design
 # vsim -voptargs="+acc" -msgmode both -assertdebug -wlfdeleteonquit work.FIFO_tb 
-# Start time: 18:49:48 on Sep 28,2026
+# Start time: 11:47:10 on Oct 02,2026
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: mique  Hostname: SURFACE-LAPTOP  ProcessID: 6416
-#           Attempting to use alternate WLF file "./wlftbdfj8d".
+#           Attempting to use alternate WLF file "./wlft7yyk7s".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftbdfj8d
+#           Using alternate file: ./wlft7yyk7s
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
 # ** Warning: ../src/FIFO_tb.sv(4): (vopt-2605) empty port name in port list.
@@ -43,7 +43,7 @@
 restart
 # Closing VCD file "fifo_tb_all.vcd"
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt5
+# ** Note: (vsim-8009) Loading existing optimized design _opt3
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=2.
 # Loading work.fifo_if(fast)
 # Loading work.utilidades_pkg(fast)
@@ -184,138 +184,146 @@ run -all
 #    Time: 18150 ns Started: 18150 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
 # Secuencia 2: Vaciado
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 611850 ns Started: 611850 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 41850 ns Started: 41850 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 612250 ns Started: 612250 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 42250 ns Started: 42250 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 612350 ns Started: 612350 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 42350 ns Started: 42350 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 612450 ns Started: 612450 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 42450 ns Started: 42450 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 613450 ns Started: 613450 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 43450 ns Started: 43450 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 613550 ns Started: 613550 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 43550 ns Started: 43550 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 613650 ns Started: 613650 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 43650 ns Started: 43650 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 614350 ns Started: 614350 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 44350 ns Started: 44350 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 614450 ns Started: 614450 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 44450 ns Started: 44450 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 614550 ns Started: 614550 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 44550 ns Started: 44550 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 614650 ns Started: 614650 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 44650 ns Started: 44650 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 614750 ns Started: 614750 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 44750 ns Started: 44750 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 614850 ns Started: 614850 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 44850 ns Started: 44850 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 614950 ns Started: 614950 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 44950 ns Started: 44950 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 615050 ns Started: 615050 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 45050 ns Started: 45050 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 615150 ns Started: 615150 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 45150 ns Started: 45150 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 615250 ns Started: 615250 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 45250 ns Started: 45250 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 615350 ns Started: 615350 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 45350 ns Started: 45350 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 615450 ns Started: 615450 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 45450 ns Started: 45450 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 615850 ns Started: 615850 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 45850 ns Started: 45850 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 615950 ns Started: 615950 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 45950 ns Started: 45950 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 616050 ns Started: 616050 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 46050 ns Started: 46050 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 616450 ns Started: 616450 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 46450 ns Started: 46450 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 616550 ns Started: 616550 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 46550 ns Started: 46550 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 616650 ns Started: 616650 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 46650 ns Started: 46650 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 617050 ns Started: 617050 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 47050 ns Started: 47050 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 617150 ns Started: 617150 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 47150 ns Started: 47150 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 617250 ns Started: 617250 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 47250 ns Started: 47250 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 621550 ns Started: 621550 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 51550 ns Started: 51550 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 621650 ns Started: 621650 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 51650 ns Started: 51650 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 621750 ns Started: 621750 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 51750 ns Started: 51750 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 622150 ns Started: 622150 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 52150 ns Started: 52150 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 622250 ns Started: 622250 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 52250 ns Started: 52250 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 622350 ns Started: 622350 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 52350 ns Started: 52350 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 623650 ns Started: 623650 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 53650 ns Started: 53650 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 623750 ns Started: 623750 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 53750 ns Started: 53750 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 623850 ns Started: 623850 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 53850 ns Started: 53850 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 624250 ns Started: 624250 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 54250 ns Started: 54250 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 624350 ns Started: 624350 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 54350 ns Started: 54350 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 624450 ns Started: 624450 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 54450 ns Started: 54450 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 626650 ns Started: 626650 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 56650 ns Started: 56650 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 626750 ns Started: 626750 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 56750 ns Started: 56750 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 626850 ns Started: 626850 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 56850 ns Started: 56850 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 627550 ns Started: 627550 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 57550 ns Started: 57550 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 627650 ns Started: 627650 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 57650 ns Started: 57650 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 627750 ns Started: 627750 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 57750 ns Started: 57750 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 629050 ns Started: 629050 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 59050 ns Started: 59050 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 629150 ns Started: 629150 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 59150 ns Started: 59150 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # ** Error: estas leyendo de una fifo vacia
-#    Time: 629250 ns Started: 629250 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
-# ** Error: estas leyendo de una fifo vacia
-#    Time: 630550 ns Started: 630550 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
-# ** Error: estas leyendo de una fifo vacia
-#    Time: 630650 ns Started: 630650 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
-# ** Error: estas leyendo de una fifo vacia
-#    Time: 630750 ns Started: 630750 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
-# ** Error: estas leyendo de una fifo vacia
-#    Time: 631150 ns Started: 631150 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
-# ** Error: estas leyendo de una fifo vacia
-#    Time: 631250 ns Started: 631250 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
-# ** Error: estas leyendo de una fifo vacia
-#    Time: 631350 ns Started: 631350 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
-# ** Error: estas leyendo de una fifo vacia
-#    Time: 631750 ns Started: 631750 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
-# ** Error: estas leyendo de una fifo vacia
-#    Time: 631850 ns Started: 631850 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
-# ** Error: estas leyendo de una fifo vacia
-#    Time: 631950 ns Started: 631950 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
-# ** Error: estas leyendo de una fifo vacia
-#    Time: 632950 ns Started: 632950 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
-# ** Error: estas leyendo de una fifo vacia
-#    Time: 633050 ns Started: 633050 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
-# ** Error: estas leyendo de una fifo vacia
-#    Time: 633150 ns Started: 633150 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
-# ** Error: estas leyendo de una fifo vacia
-#    Time: 633250 ns Started: 633250 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
-# ** Error: estas leyendo de una fifo vacia
-#    Time: 633350 ns Started: 633350 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
-# ** Error: estas leyendo de una fifo vacia
-#    Time: 633450 ns Started: 633450 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+#    Time: 59250 ns Started: 59250 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # FIN DEL TEST
+# ** Error: estas leyendo de una fifo vacia
+#    Time: 60550 ns Started: 60550 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+# ** Error: estas leyendo de una fifo vacia
+#    Time: 60650 ns Started: 60650 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+# ** Error: estas leyendo de una fifo vacia
+#    Time: 60750 ns Started: 60750 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+# ** Error: estas leyendo de una fifo vacia
+#    Time: 60850 ns Started: 60850 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+# ** Error: estas leyendo de una fifo vacia
+#    Time: 60950 ns Started: 60950 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+# ** Error: estas leyendo de una fifo vacia
+#    Time: 61050 ns Started: 61050 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+# ** Error: estas leyendo de una fifo vacia
+#    Time: 61150 ns Started: 61150 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+# ** Error: estas leyendo de una fifo vacia
+#    Time: 61250 ns Started: 61250 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+# ** Error: estas leyendo de una fifo vacia
+#    Time: 61350 ns Started: 61350 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+# ** Error: estas leyendo de una fifo vacia
+#    Time: 61450 ns Started: 61450 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+# ** Error: estas leyendo de una fifo vacia
+#    Time: 61550 ns Started: 61550 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+# ** Error: estas leyendo de una fifo vacia
+#    Time: 61650 ns Started: 61650 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+# ** Error: estas leyendo de una fifo vacia
+#    Time: 61750 ns Started: 61750 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+# ** Error: estas leyendo de una fifo vacia
+#    Time: 61850 ns Started: 61850 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+# ** Error: estas leyendo de una fifo vacia
+#    Time: 61950 ns Started: 61950 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+# ** Error: estas leyendo de una fifo vacia
+#    Time: 62050 ns Started: 62050 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+# ** Error: estas leyendo de una fifo vacia
+#    Time: 62150 ns Started: 62150 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+# ** Error: estas leyendo de una fifo vacia
+#    Time: 62250 ns Started: 62250 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+# ** Error: estas leyendo de una fifo vacia
+#    Time: 62350 ns Started: 62350 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
+# ** Error: estas leyendo de una fifo vacia
+#    Time: 62450 ns Started: 62450 ns  Scope: FIFO_tb.duv.duv.sobrevaciado File: ../src/FIFO_no_sintetizable.sv Line: 65 Expr: ~WRITE
 # Simulacion finalizada exitosamente.
-add log -class sim:/utilidades_pkg::RCSG_base__1
-add wave -position insertpoint sim:/utilidades_pkg::RCSG_base__1::*
-add wave -position insertpoint sim:/FIFO_tb/duv/duv/*
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/josan/proyectos/Practicas-DMA/sim/wave.do
-# End time: 18:59:04 on Sep 28,2026, Elapsed time: 0:09:16
-# Errors: 128, Warnings: 2
+# ** Note: $finish    : ../src/FIFO_tb.sv(45)
+#    Time: 62550 ns  Iteration: 0  Instance: /FIFO_tb
+# 1
+# Break in Module FIFO_tb at ../src/FIFO_tb.sv line 45
