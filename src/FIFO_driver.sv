@@ -23,11 +23,15 @@ class FIFO_Driver#(
             driver_interface.tx.rd_en   <= 1'b0;
             driver_interface.tx.wr_en   <= 1'b0;
             @(driver_interface.neg_event);
-            driver_interface.neg_event.rst_a <= 1'b0;
+
+            driver_interface.neg_event.rst_a    <= 1'b0;
+
             repeat(3)begin
                 @(driver_interface.neg_event);
             end
-            driver_interface.neg_event.rst_a <= 1'b1;
+
+            driver_interface.neg_event.rst_a    <= 1'b1;
+            
             @(driver_interface.neg_event);
         end
     endtask
