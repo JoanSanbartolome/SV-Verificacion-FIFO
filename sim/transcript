@@ -301,3 +301,5 @@ run -all
 #    Time: 1202550 ns  Iteration: 0  Instance: /FIFO_tb
 # 1
 # Break in Module FIFO_tb at ../src/FIFO_tb.sv line 45
+# End time: 17:46:33 on Sep 29,2026, Elapsed time: 0:06:41
+# Errors: 128, Warnings: 2

@@ -48,11 +48,19 @@ class FIFO_Monitor #(
                 transaction_handle.wr_en        = vif_monitor.px.wr_en   ;
                 transaction_handle.rd_en        = vif_monitor.px.rd_en   ;
 
-                transaction_coverage    = transaction_handle.clone();
-                //transaction_scb_in      = transaction_handle.clone();
-                //transaction_scb_out     = transaction_handle.clone();
+                transaction_coverage            = transaction_handle.clone();
+                //transaction_scb_in            = transaction_handle.clone();
+                //transaction_scb_out           = transaction_handle.clone();
 
                 mailbox_coverage.put(transaction_coverage);
+                /*
+                fork
+                    if (vif_monitor.px)
+                        mailbox_predictor.put(transaction_scb_in);
+                    if (vif_monitor.px)
+                        mailbox_evaluator.put(transaction_scb_out);
+                join_none
+                */
             end
         end
     endtask
