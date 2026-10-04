@@ -16,13 +16,13 @@
 # 7
 # Sim: load design
 # vsim -voptargs="+acc" -msgmode both -assertdebug -wlfdeleteonquit work.FIFO_tb 
-# Start time: 11:07:07 on Oct 04,2026
+# Start time: 11:41:54 on Oct 04,2026
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: mique  Hostname: PC_MIQUEL  ProcessID: 22544
-#           Attempting to use alternate WLF file "./wlftc5m1zv".
+#           Attempting to use alternate WLF file "./wlfth3xa8x".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftc5m1zv
-# ** Note: (vsim-3812) Design is being optimized...
+#           Using alternate file: ./wlfth3xa8x
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
 # ** Warning: ../src/FIFO_tb.sv(4): (vopt-2605) empty port name in port list.
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=4.
@@ -45,8 +45,8 @@ run -all
 # FIN DEL TEST
 # Simulacion finalizada exitosamente.
 # ** Note: $finish    : ../src/FIFO_tb.sv(47)
-#    Time: 400550 ns  Iteration: 4  Instance: /FIFO_tb
+#    Time: 1000550 ns  Iteration: 2  Instance: /FIFO_tb
 # 1
 # Break in Module FIFO_tb at ../src/FIFO_tb.sv line 47
-# End time: 11:15:45 on Oct 04,2026, Elapsed time: 0:08:38
+# End time: 11:43:57 on Oct 04,2026, Elapsed time: 0:02:03
 # Errors: 0, Warnings: 4

@@ -11,7 +11,7 @@ class RCSG_subir #(
     parameter int DEPTH = 16
 ) extends utilidades_pkg::RCSG_base #(WIDTH,DEPTH);
 
-    constraint llenar_c {{rd_en,wr_en} dist {0 := 5, 1 := 45, 2 := 15, 3 := 35}; };
+    constraint llenar_c {{rd_en,wr_en} dist {0 := 10, 1 := 40, 2 := 20, 3 := 30}; };
 
     function new();
         super.new();

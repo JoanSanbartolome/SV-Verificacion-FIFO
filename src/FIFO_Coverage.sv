@@ -18,7 +18,7 @@ class FIFO_Coverage #(
         bins corner_case_lleno ={32};
       }
    
-    flags: coverpoint {tr.full, tr.empty}
+    flags: coverpoint {tr.empty, tr.full}
       {
         bins flag_vacio = {1};
         bins flag_lleno = {2};
@@ -39,9 +39,14 @@ class FIFO_Coverage #(
       // ignore_bins datos_no_posibles ={[20:255]};
       }
       */
-    estados_normales: cross grado_llenado, rw ;
+    estados_normales: cross grado_llenado, rw 
+      {
+        ignore_bins ilegales =
+        (binsof(grado_llenado.corner_case_lleno) && binsof(rw.solo_escritura)) ||
+        (binsof(grado_llenado.corner_case_vacio) && binsof(rw.solo_lectura));
+      }
 
-    casos_especiales:cross  rw, flags 
+    casos_especiales:cross  rw, flags
       {
         bins casos_intermedios = binsof(flags.flag_intermedio);  
         ignore_bins no_admisible = (binsof(flags.flag_lleno)&& binsof(rw.solo_escritura))|| (binsof(flags.flag_vacio)&& binsof(rw.solo_lectura));
