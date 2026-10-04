@@ -16,13 +16,16 @@
 # 7
 # Sim: load design
 # vsim -voptargs="+acc" -msgmode both -assertdebug -wlfdeleteonquit work.FIFO_tb 
-# Start time: 17:39:52 on Sep 29,2026
+# Start time: 11:07:07 on Oct 04,2026
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: mique  Hostname: SURFACE-LAPTOP  ProcessID: 6416
-#           Attempting to use alternate WLF file "./wlftsix0as".
+#           File in use by: mique  Hostname: PC_MIQUEL  ProcessID: 22544
+#           Attempting to use alternate WLF file "./wlftc5m1zv".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftsix0as
-# ** Note: (vsim-8009) Loading existing optimized design _opt9
+#           Using alternate file: ./wlftc5m1zv
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Warning: ../src/FIFO_tb.sv(4): (vopt-2605) empty port name in port list.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=4.
 # Loading sv_std.std
 # Loading work.fifo_if(fast)
 # Loading work.utilidades_pkg(fast)
@@ -38,137 +41,12 @@
 # Secuencia 1: Llenado
 # 1
 run -all
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 4950 ns Started: 4950 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 5350 ns Started: 5350 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 5450 ns Started: 5450 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 5550 ns Started: 5550 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 5650 ns Started: 5650 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 5750 ns Started: 5750 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 5850 ns Started: 5850 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 5950 ns Started: 5950 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 6050 ns Started: 6050 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 6150 ns Started: 6150 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 6250 ns Started: 6250 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 6350 ns Started: 6350 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 6450 ns Started: 6450 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 6550 ns Started: 6550 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 6650 ns Started: 6650 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 6750 ns Started: 6750 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 6850 ns Started: 6850 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 6950 ns Started: 6950 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 7050 ns Started: 7050 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 7750 ns Started: 7750 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 7850 ns Started: 7850 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 7950 ns Started: 7950 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 8050 ns Started: 8050 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 8150 ns Started: 8150 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 8250 ns Started: 8250 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 8350 ns Started: 8350 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 8450 ns Started: 8450 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 8550 ns Started: 8550 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 8650 ns Started: 8650 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 8750 ns Started: 8750 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 8850 ns Started: 8850 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 9250 ns Started: 9250 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 9350 ns Started: 9350 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 9450 ns Started: 9450 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 9850 ns Started: 9850 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 9950 ns Started: 9950 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 10050 ns Started: 10050 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 11050 ns Started: 11050 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 11150 ns Started: 11150 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 11250 ns Started: 11250 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 11350 ns Started: 11350 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 11450 ns Started: 11450 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 11550 ns Started: 11550 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 11650 ns Started: 11650 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 11750 ns Started: 11750 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 11850 ns Started: 11850 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 11950 ns Started: 11950 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 12050 ns Started: 12050 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 12150 ns Started: 12150 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 14650 ns Started: 14650 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 14750 ns Started: 14750 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 14850 ns Started: 14850 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 15250 ns Started: 15250 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 15350 ns Started: 15350 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 15450 ns Started: 15450 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 15550 ns Started: 15550 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 15650 ns Started: 15650 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 15750 ns Started: 15750 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 16150 ns Started: 16150 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 16250 ns Started: 16250 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 16350 ns Started: 16350 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 17950 ns Started: 17950 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 18050 ns Started: 18050 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
-# ** Error: estas escribiendo sobre una fifo llena
-#    Time: 18150 ns Started: 18150 ns  Scope: FIFO_tb.duv.duv.sobrellenado File: ../src/FIFO_no_sintetizable.sv Line: 60 Expr: ~READ
 # Secuencia 2: Vaciado
 # FIN DEL TEST
-# ** Note: $finish    : ../src/FIFO_tb.sv(42)
-#    Time: 60550 ns  Iteration: 4  Instance: /FIFO_tb
+# Simulacion finalizada exitosamente.
+# ** Note: $finish    : ../src/FIFO_tb.sv(47)
+#    Time: 400550 ns  Iteration: 4  Instance: /FIFO_tb
 # 1
-# Break in Module FIFO_tb at ../src/FIFO_tb.sv line 42
+# Break in Module FIFO_tb at ../src/FIFO_tb.sv line 47
+# End time: 11:15:45 on Oct 04,2026, Elapsed time: 0:08:38
+# Errors: 0, Warnings: 4

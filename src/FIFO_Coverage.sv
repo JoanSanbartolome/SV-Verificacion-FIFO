@@ -3,19 +3,22 @@ class FIFO_Coverage #(
     parameter DEPTH = 32
 );
   
-  FIFO_Transaction #(WIDTH, DEPTH) tr_handle;
+  utilidades_pkg::FIFO_Transaction #(WIDTH, DEPTH) tr_handle;
   
   mailbox #(FIFO_Transaction #(WIDTH, DEPTH)) cov_mbx;
   
-  covergroup Cobertura_funcional @(posedge clk);
-    grado_llenado:coverpoint use_dw
+ covergroup Cobertura_funcional with function sample (FIFO_Transaction #(WIDTH, DEPTH) tr);
+
+    option.per_instance = 1;
+
+    grado_llenado:coverpoint tr.use_dw
       {
         bins intermedio[] = {[1:31]};
         bins corner_case_vacio ={0};
         bins corner_case_lleno ={32};
       }
    
-    flags: coverpoint {vacio,lleno}
+    flags: coverpoint {tr.full, tr.empty}
       {
         bins flag_vacio = {1};
         bins flag_lleno = {2};
@@ -23,22 +26,25 @@ class FIFO_Coverage #(
         illegal_bins flags_no_posibles ={0};
       }
  
-    rw:coverpoint {rd_en,wr_en}
+    rw:coverpoint {tr.read_enable, tr.write_enable}
       {
         bins solo_lectura = {2};
         bins solo_escritura = {1};
         bins lectura_escritura= {3};
         bins nada = default;
       }
-/*      datos_entrada: coverpoint DATA_IN
-      {bins datos_posibles = {[0:19]};
-  // ignore_bins datos_no_posibles ={[20:255]};
-  }
-*/
-    estados_normales:cross grado_llenado, rw ;
+    /*datos_entrada: coverpoint tr.data_in
+      {
+        bins datos_posibles = {[0:19]};
+      // ignore_bins datos_no_posibles ={[20:255]};
+      }
+      */
+    estados_normales: cross grado_llenado, rw ;
+
     casos_especiales:cross  rw, flags 
-      {bins casos_intermedios = binsof(flags.flag_intermedio);  
-       ignore_bins no_admisible = (binsof(flags.flag_lleno)&& binsof(rw.solo_escritura))|| (binsof(flags.flag_vacio)&& binsof(rw.solo_lectura));
+      {
+        bins casos_intermedios = binsof(flags.flag_intermedio);  
+        ignore_bins no_admisible = (binsof(flags.flag_lleno)&& binsof(rw.solo_escritura))|| (binsof(flags.flag_vacio)&& binsof(rw.solo_lectura));
       }
 endgroup;
   
@@ -48,17 +54,19 @@ endgroup;
     this.cov_mbx = mbx_in;
     
     // Se construye el covergroup
-    fifo_cover = new();
+    Cobertura_funcional = new();
   endfunction
   
   // 6. Task con loop infinito (forever) para recolectar y muestrear
   task run();
-    forever begin
-      // El hilo se bloquea aquí hasta que el monitor haga un put() en el mailbox
-      cov_mbx.get(tr_handle); 
-      
-      // Una vez recibida la transacción, se pasa como argumento al sample()
-      fifo_cover.sample(tr_handle);
+    begin
+      while(1) begin
+        // El hilo se bloquea aquí hasta que el monitor haga un put() en el mailbox
+        cov_mbx.get(tr_handle); 
+        
+        // Una vez recibida la transacción, se pasa como argumento al sample()
+        Cobertura_funcional.sample(tr_handle);
+      end
     end
   endtask
   

@@ -18,18 +18,18 @@ class FIFO_Testaleatorio1#(
         begin
             fork
                 enviroment.monitor.run();
-                enviroment.monitor.cov_handle.run();
-                //enviroment.monitor.scoreboard.run_predictor();
-                //enviroment.monitor.scoreboard.run_evaluator();
+                enviroment.monitor.coverage_handle.run();
+                enviroment.monitor.score_handle.predictor_resultados();
+                enviroment.monitor.score_handle.evaluator_resultados();
             join_none
             // Secuencia de llenado de la FIFO
             $display("Secuencia 1: Llenado");
-            repeat (100) begin
+            repeat (2000) begin
                 enviroment.driver.secuencia_llenado();
             end
             // Secuencia de vaciado de la FIFO
             $display("Secuencia 2: Vaciado");
-            repeat (100) begin
+            repeat (2000) begin
                 enviroment.driver.secuencia_vaciado();
             end
             $display("FIN DEL TEST");

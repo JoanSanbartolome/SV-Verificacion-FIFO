@@ -38,7 +38,6 @@ class FIFO_Driver#(
 
     task secuencia_llenado;
         begin
-            @(driver_interface.tx);
             assert(handler_subir.randomize())
             else $fatal("Randomization failed in sec_item1");
 
@@ -46,14 +45,11 @@ class FIFO_Driver#(
             driver_interface.tx.data_in <= handler_subir.data_in;
             driver_interface.tx.rd_en   <= handler_subir.rd_en;
             driver_interface.tx.wr_en   <= handler_subir.wr_en;
-
-            @(driver_interface.tx);
         end
     endtask
 
     task secuencia_vaciado;
         begin
-            @(driver_interface.tx);
             assert(handler_bajar.randomize())
             else $fatal("Randomization failed in sec_item1");
                 
@@ -61,8 +57,6 @@ class FIFO_Driver#(
             driver_interface.tx.data_in <= handler_bajar.data_in;
             driver_interface.tx.rd_en   <= handler_bajar.rd_en;
             driver_interface.tx.wr_en   <= handler_bajar.wr_en;
-
-            @(driver_interface.tx);
         end
     endtask
 endclass //FIFO_Driver
