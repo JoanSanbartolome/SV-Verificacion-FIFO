@@ -15,38 +15,23 @@
 # do Sim.do
 # 7
 # Sim: load design
-# vsim -voptargs="+acc" -msgmode both -assertdebug -wlfdeleteonquit work.FIFO_tb 
-# Start time: 11:41:54 on Oct 04,2026
+# vsim -voptargs="+acc" -msgmode both -assertdebug -wlfdeleteonquit work.fifo_tb 
+# Start time: 15:10:46 on Oct 05,2026
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: mique  Hostname: PC_MIQUEL  ProcessID: 22544
-#           Attempting to use alternate WLF file "./wlfth3xa8x".
+#           Attempting to use alternate WLF file "./wlft4d1r9f".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlfth3xa8x
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+#           Using alternate file: ./wlft4d1r9f
+# ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# ** Warning: ../src/FIFO_tb.sv(4): (vopt-2605) empty port name in port list.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=4.
-# Loading sv_std.std
-# Loading work.fifo_if(fast)
-# Loading work.utilidades_pkg(fast)
-# Loading work.FIFO_tb_sv_unit(fast)
-# Loading work.FIFO_tb(fast)
-# Loading work.fifo_if(fast__2)
-# Loading work.FIFO_top_duv(fast)
-# Loading work.FIFO_no_sintetizable(fast)
-# Sim: load wave-file(s)
-# 0
-# Sim: log signals
-# Sim: run ...
-# Secuencia 1: Llenado
-# 1
-run -all
-# Secuencia 2: Vaciado
-# FIN DEL TEST
-# Simulacion finalizada exitosamente.
-# ** Note: $finish    : ../src/FIFO_tb.sv(47)
-#    Time: 1000550 ns  Iteration: 2  Instance: /FIFO_tb
-# 1
-# Break in Module FIFO_tb at ../src/FIFO_tb.sv line 47
-# End time: 11:43:57 on Oct 04,2026, Elapsed time: 0:02:03
-# Errors: 0, Warnings: 4
+# ** Note: (vopt-143) Recognized 1 FSM in module "FIFO_sintetizable(fast)".
+# ** Warning: ../src/fifo_tb.sv(4): (vopt-2605) empty port name in port list.
+# ** Error (suppressible): ../src/fifo_tb.sv(60): (vopt-13266) No actual value has been specified for a formal argument 'vif_monitor' that does not have a default value.
+# ** Error (suppressible): (vopt-13276) ../src/fifo_tb.sv(61:4): Could not find field/method name (run) in 'test_h' of 'test_h.run'.
+# Optimization failed
+# ** Error: (vopt-2064) Compiler back-end code generation process terminated due to previous errors with code 12.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=3, Warnings=4.
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./Sim.do PAUSED at line 18
