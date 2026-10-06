@@ -20,7 +20,7 @@
             "reveal": "silent",
             "focus": true,
             "panel": "shared",
-            "showReuseMessage": true, 
+            "showReuseMessage": true,
             "clear": false
          },
          "problemMatcher": [
@@ -67,9 +67,9 @@
             "panel": "shared",
             "showReuseMessage": true,
             "clear": false
-         },
-      }
-           {
+         }
+      },
+      {
          "label": "Simulate visualizer",
          "type": "shell",
          "command": "qrun",
@@ -91,7 +91,39 @@
             "panel": "shared",
             "showReuseMessage": true,
             "clear": false
+         }
+      },
+      {
+         // NUEVA: compila y simula inyectando el error elegido en el desplegable
+         "label": "Simulate con errores",
+         "type": "shell",
+         "command": "vsim",
+         "args": [
+            "-do",
+            "set ERR ${input:modoError}; do SimErr.do"
+         ],
+         "dependsOn": "Compile",
+         "options": {
+            "cwd": "${workspaceFolder}/sim"
          },
-      } 
+         "problemMatcher": [],
+         "group": "test",
+         "presentation": {
+            "reveal": "never",
+            "focus": false,
+            "panel": "shared",
+            "showReuseMessage": true,
+            "clear": false
+         }
+      }
+   ],
+   "inputs": [
+      {
+         "id": "modoError",
+         "type": "pickString",
+         "description": "Error a inyectar en la FIFO",
+         "options": ["DATO", "FLAG", "USEDW", "ESTADO"],
+         "default": "FLAG"
+      }
    ]
 }

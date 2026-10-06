@@ -1,6 +1,7 @@
 ../src/utilidades_pkg.sv
 ../src/FIFO_no_sintetizable.sv
 ../src/FIFO_sintetizable.sv
+../src/FIFO_inyeccion_errores.sv
 ../src/ram_dp.sv
 ../src/fifo_if.sv
 ../src/FIFO_top_duv.sv
