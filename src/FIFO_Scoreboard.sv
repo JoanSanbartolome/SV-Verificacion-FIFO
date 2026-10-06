@@ -85,25 +85,25 @@ class FIFO_Scoreboard #(
                 end
 
                 assert (transaction_obtained.empty == transaction_predicted.empty)
-                    aciertos[0]++;
+                    aciertos[1]++;
                 else  begin
-                    errores[0]++;
+                    errores[1]++;
                     $error("Error vaciado: obtenido=%0b esperado=%0b",
                             transaction_obtained.empty, transaction_predicted.empty);
                 end
 
                 assert (transaction_obtained.full == transaction_predicted.full)
-                    aciertos[0]++;
+                    aciertos[2]++;
                 else begin
-                    errores[0]++;
+                    errores[2]++;
                     $error("Error llenado: obtenido=%0b esperado=%0b",
                             transaction_obtained.full, transaction_predicted.full);
                 end
 
                 assert (transaction_obtained.use_dw == transaction_predicted.use_dw)
-                    aciertos[0]++;
+                    aciertos[3]++;
                 else begin
-                    errores[0]++;
+                    errores[3]++;
                     $error("Fallo en grado de llenado: obtenido=%0d esperado=%0d",
                             transaction_obtained.use_dw, transaction_predicted.use_dw);    
                 end
