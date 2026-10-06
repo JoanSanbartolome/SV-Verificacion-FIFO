@@ -6,14 +6,22 @@ class FIFO_Scoreboard #(
     utilidades_pkg::FIFO_Transaction #(WIDTH,DEPTH) transaction_expected;
     utilidades_pkg::FIFO_Transaction #(WIDTH,DEPTH) transaction_obtained;
 
+    // Guarda las transacciones predecidas por el predictor
+    utilidades_pkg::FIFO_Transaction #(WIDTH,DEPTH) transaction_predicted; 
+
     mailbox #(FIFO_Transaction) mailbox_entradas;
     mailbox #(FIFO_Transaction) mailbox_salidas;
+
+    // Mailbox que hace de buffer para las transacciones expected
+    mailbox #(FIFO_Transaction) mailbox_predecidas; 
 
     logic [WIDTH-1:0] FIFO_ideal[$]; 
 
     function new(mailbox #(FIFO_Transaction #(WIDTH, DEPTH)) mbx_in, mailbox #(FIFO_Transaction #(WIDTH, DEPTH)) mbx_out);
         this.mailbox_entradas  = mbx_in;
         this.mailbox_salidas   = mbx_out; 
+
+        mailbox_predecidas = new(); // Construimos el mailbox localmente ya que solo hace de buffer
     endfunction //new()
 
     //tasks de monitorizacion
@@ -45,6 +53,8 @@ class FIFO_Scoreboard #(
             transaction_expected.use_dw = FIFO_ideal.size();
             transaction_expected.full = !(FIFO_ideal.size() == DEPTH);
             transaction_expected.empty = !(FIFO_ideal.size() == 0);
+
+            mailbox_predecidas.put(transaction_expected.clone());
             end
         end
     endtask
@@ -53,23 +63,24 @@ class FIFO_Scoreboard #(
         begin
             while (1) begin
                 mailbox_salidas.get(transaction_obtained);
+                mailbox_predecidas.get(transaction_predicted);
 
                 if (transaction_expected.read_enable)
-                    assert (transaction_obtained.data_out == transaction_expected.data_out)
+                    assert (transaction_obtained.data_out == transaction_predicted.data_out)
                 else $error("Salida diferente: obtenido=%0h esperado=%0h",
-                            transaction_obtained.data_out, transaction_expected.data_out);
+                            transaction_obtained.data_out, transaction_predicted.data_out);
 
-                assert (transaction_obtained.empty == transaction_expected.empty)
+                assert (transaction_obtained.empty == transaction_predicted.empty)
                 else $error("Error vaciado: obtenido=%0b esperado=%0b",
-                            transaction_obtained.empty, transaction_expected.empty);
+                            transaction_obtained.empty, transaction_predicted.empty);
 
-                assert (transaction_obtained.full == transaction_expected.full)
+                assert (transaction_obtained.full == transaction_predicted.full)
                 else $error("Error llenado: obtenido=%0b esperado=%0b",
-                            transaction_obtained.full, transaction_expected.full);
+                            transaction_obtained.full, transaction_predicted.full);
 
-                assert (transaction_obtained.use_dw == transaction_expected.use_dw)
+                assert (transaction_obtained.use_dw == transaction_predicted.use_dw)
                 else $error("Fallo en grado de llenado: obtenido=%0d esperado=%0d",
-                            transaction_obtained.use_dw, transaction_expected.use_dw);    
+                            transaction_obtained.use_dw, transaction_predicted.use_dw);    
 
             end
         end
