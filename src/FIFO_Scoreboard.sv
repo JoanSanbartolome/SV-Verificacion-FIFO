@@ -18,6 +18,13 @@ class FIFO_Scoreboard #(
     logic [WIDTH-1:0] FIFO_ideal[$]; 
     logic [WIDTH-1:0] ultimo_dato_out = '0;   // Guarda el dato de salida anterior para los casos que no deberia cambiar
 
+    // Contadores para el informe final: una posición por salida comprobada
+    localparam int N_SALIDAS = 4;
+    string nombres[N_SALIDAS] = '{"DATA_OUT", "F_EMPTY_N", "F_FULL_N", "USE_DW"};
+    int    aciertos[N_SALIDAS];
+    int    errores [N_SALIDAS];
+    int    n_comparaciones = 0;
+
     function new(mailbox #(FIFO_Transaction #(WIDTH, DEPTH)) mbx_in, mailbox #(FIFO_Transaction #(WIDTH, DEPTH)) mbx_out);
         this.mailbox_entradas  = mbx_in;
         this.mailbox_salidas   = mbx_out; 
@@ -42,11 +49,11 @@ class FIFO_Scoreboard #(
                     case ({transaction_expected.read_enable, transaction_expected.write_enable})
                 
                     2'b01: if (FIFO_ideal.size()<DEPTH) FIFO_ideal.push_front(transaction_expected.data_in);
-                    2'b10: transaction_expected.data_out=FIFO_ideal.pop_back(); 
+                    2'b10: ultimo_dato_out = FIFO_ideal.pop_back();
                     2'b11: 
                         begin
                             FIFO_ideal.push_front(transaction_expected.data_in);
-                            ultimo_dato_out.data_out=FIFO_ideal.pop_back();              
+                            ultimo_dato_out=FIFO_ideal.pop_back();              
                         end
                             
                     endcase
@@ -67,24 +74,62 @@ class FIFO_Scoreboard #(
             while (1) begin
                 mailbox_salidas.get(transaction_obtained);
                 mailbox_predecidas.get(transaction_predicted);
+                n_comparaciones++;
 
                 assert (transaction_obtained.data_out == transaction_predicted.data_out)
-                    else $error("Salida diferente: obtenido=%0h esperado=%0h",
-                                transaction_obtained.data_out, esperado.data_out);
+                    aciertos[0]++;
+                else begin
+                    errores[0]++;
+                    $error("Salida diferente: obtenido=%0h esperado=%0h",
+                            transaction_obtained.data_out, transaction_predicted.data_out);
+                end
 
                 assert (transaction_obtained.empty == transaction_predicted.empty)
-                else $error("Error vaciado: obtenido=%0b esperado=%0b",
+                    aciertos[0]++;
+                else  begin
+                    errores[0]++;
+                    $error("Error vaciado: obtenido=%0b esperado=%0b",
                             transaction_obtained.empty, transaction_predicted.empty);
+                end
 
                 assert (transaction_obtained.full == transaction_predicted.full)
-                else $error("Error llenado: obtenido=%0b esperado=%0b",
+                    aciertos[0]++;
+                else begin
+                    errores[0]++;
+                    $error("Error llenado: obtenido=%0b esperado=%0b",
                             transaction_obtained.full, transaction_predicted.full);
+                end
 
                 assert (transaction_obtained.use_dw == transaction_predicted.use_dw)
-                else $error("Fallo en grado de llenado: obtenido=%0d esperado=%0d",
+                    aciertos[0]++;
+                else begin
+                    errores[0]++;
+                    $error("Fallo en grado de llenado: obtenido=%0d esperado=%0d",
                             transaction_obtained.use_dw, transaction_predicted.use_dw);    
-
+                end
             end
         end
     endtask
+
+    function void report();
+        int total_errores = 0;
+
+        $display("==================== INFORME DEL SCOREBOARD ====================");
+        $display("Transacciones comparadas: %0d", n_comparaciones);
+        foreach (nombres[i]) begin
+            $display("  %-10s  aciertos = %6d   errores = %6d", nombres[i], aciertos[i], errores[i]);
+            total_errores += errores[i];
+        end
+        $display("Esperados pendientes de comparar: %0d", mailbox_predecidas.num());
+
+        if (n_comparaciones == 0)
+            $error("RESULTADO: FALLO - el scoreboard no ha comparado ninguna transaccion");
+        else if (total_errores > 0)
+            $error("RESULTADO: FALLO - %0d errores en %0d comparaciones", total_errores, n_comparaciones);
+        else if (mailbox_predecidas.num() > 1)
+            $error("RESULTADO: FALLO - quedan %0d esperados sin pareja", mailbox_predecidas.num());
+        else
+            $display("RESULTADO: EXITO - %0d comparaciones sin errores", n_comparaciones);
+        $display("================================================================");
+    endfunction
 endclass //FIFO_Scoreboard

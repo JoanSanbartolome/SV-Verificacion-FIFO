@@ -60,6 +60,16 @@ module FIFO_inyeccion_errores #(
     release FIFO_sintetizable.estado;
   endtask
 
+   // Error 5: DATA_OUT cambia cuando rd_wr estan a 0
+  task automatic error_dato_idle();
+    @(posedge CLOCK iff (!READ && !WRITE && USE_DW > 0)); #1;
+    dato_corrupto = FIFO_sintetizable.DATA_OUT + 1'b1;
+    force FIFO_sintetizable.DATA_OUT = dato_corrupto;
+    $display("[%0t] INYECCION DATO: DATA_OUT forzado a %0h", $time, dato_corrupto);
+    @(posedge CLOCK); #1;
+    release FIFO_sintetizable.DATA_OUT;
+  endtask
+
   // Selección del error al lanzar la simulación
   initial begin
     if ($value$plusargs("ERR=%s", modo)) begin
@@ -69,6 +79,7 @@ module FIFO_inyeccion_errores #(
         "FLAG":   error_flag();
         "USEDW":  error_usedw();
         "ESTADO": error_estado();
+        "DATOIDLE": error_dato_idle();
         default:  $warning("Modo de error desconocido: %s", modo);
       endcase
     end

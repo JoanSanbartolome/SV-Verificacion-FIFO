@@ -122,7 +122,7 @@
          "id": "modoError",
          "type": "pickString",
          "description": "Error a inyectar en la FIFO",
-         "options": ["DATO", "FLAG", "USEDW", "ESTADO"],
+         "options": ["DATO", "FLAG", "USEDW", "ESTADO", "DATOIDLE"],
          "default": "FLAG"
       }
    ]

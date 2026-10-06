@@ -53,7 +53,7 @@ class FIFO_Monitor #(
 
                 mailbox_coverage.put(transaction_coverage);
                 
-                if (!transaction_handle.rst_s) begin
+                if (1) begin
                     transaction_scb_in = transaction_handle.clone();
 
                     fork

@@ -33,6 +33,8 @@ class FIFO_Testaleatorio1#(
                 enviroment.driver.secuencia_vaciado();
             end
             $display("FIN DEL TEST");
+            repeat (2) @(enviroment.driver.driver_interface.tx);   // deja que llegue la última salida
+            enviroment.monitor.score_handle.report();
         end    
     endtask //automatic
 

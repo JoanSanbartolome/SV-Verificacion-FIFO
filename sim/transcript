@@ -16,12 +16,12 @@
 # 7
 # Sim: load design
 # vsim -voptargs="+acc" -msgmode both -assertdebug -wlfdeleteonquit work.FIFO_tb 
-# Start time: 09:48:11 on Oct 06,2026
+# Start time: 10:13:34 on Oct 06,2026
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: mique  Hostname: PC_MIQUEL  ProcessID: 22544
-#           Attempting to use alternate WLF file "./wlft4nwxjt".
+#           Attempting to use alternate WLF file "./wlftqts3jt".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft4nwxjt
+#           Using alternate file: ./wlftqts3jt
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
 # ** Note: (vopt-143) Recognized 1 FSM in module "FIFO_sintetizable(fast)".
@@ -50,5 +50,3 @@ run -all
 #    Time: 1000550 ns  Iteration: 2  Instance: /FIFO_tb
 # 1
 # Break in Module FIFO_tb at ../src/FIFO_tb.sv line 47
-# End time: 09:52:25 on Oct 06,2026, Elapsed time: 0:04:14
-# Errors: 0, Warnings: 4
