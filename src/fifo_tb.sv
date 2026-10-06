@@ -3,8 +3,9 @@ import utilidades_pkg::*;
 
 module FIFO_tb();
 
-  parameter int DATA_WIDTH = 4;
-  parameter int DEPTH = 64;
+  parameter int DATA_WIDTH = 8;
+  parameter int DEPTH = 32;
+  parameter bit FIFO_PROFESOR = 0;   // 0: FIFO propia, 1: FIFO del profesor
 
   logic clk;
 
@@ -22,7 +23,7 @@ module FIFO_tb();
   FIFO_Testaleatorio1 #(DATA_WIDTH,DEPTH) test1;
   
   // 3. Instanciación del DUV
-  FIFO_top_duv #(.WIDTH(DATA_WIDTH), .DEPTH(DEPTH)) duv (.bus(interfaz1));
+  FIFO_top_duv #(.WIDTH(DATA_WIDTH), .DEPTH(DEPTH), .FIFO_PROFESOR(FIFO_PROFESOR)) duv (.bus(interfaz1));
 
   /*
   4. Guardado del VCD
@@ -43,7 +44,7 @@ module FIFO_tb();
     test1.run_test();
 
     // Finalizar la simulación
-    $display("Simulacion finalizada exitosamente.");
+    $display("Fin de la simulacion (WIDTH=%0d, DEPTH=%0d, FIFO %s).", DATA_WIDTH, DEPTH, FIFO_PROFESOR ? "del profesor" : "propia");
     $finish;
   end
 

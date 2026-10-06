@@ -1,0 +1,36 @@
+# vsim -msgmode both -onfinish stop work.FIFO_tb -gDEPTH=16 -gDATA_WIDTH=16 -gFIFO_PROFESOR=0 
+# Start time: 12:11:05 on Oct 06,2026
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: mique  Hostname: PC_MIQUEL  ProcessID: 22544
+#           Attempting to use alternate WLF file "./wlftq8ixbh".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftq8ixbh
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: ../src/FIFO_tb.sv(4): (vopt-2605) empty port name in port list.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading sv_std.std
+# Loading work.fifo_if(fast)
+# Loading work.utilidades_pkg(fast)
+# Loading work.FIFO_tb_sv_unit(fast)
+# Loading work.FIFO_tb(fast)
+# Secuencia 1: Llenado
+# Secuencia 2: Vaciado
+# FIN DEL TEST
+# grado_llenado    : 100.00 %
+# estados_normales : 100.00 %
+# casos_especiales : 100.00 %
+# Cobertura total ($get_coverage): 100.00 %
+# ==================== INFORME DEL SCOREBOARD ====================
+# Transacciones comparadas: 2000
+#   DATA_OUT    aciertos =   2000   errores =      0
+#   F_EMPTY_N   aciertos =   2000   errores =      0
+#   F_FULL_N    aciertos =   2000   errores =      0
+#   USE_DW      aciertos =   2000   errores =      0
+# Esperados pendientes de comparar: 1
+# RESULTADO: EXITO - 2000 comparaciones sin errores
+# ================================================================
+# Fin de la simulacion (WIDTH=16, DEPTH=16, FIFO       propia).
+# ** Note: $finish    : ../src/FIFO_tb.sv(48)
+#    Time: 200750 ns  Iteration: 3  Instance: /FIFO_tb
+# Break at ../src/FIFO_tb.sv line 48
+# Stopped at ../src/FIFO_tb.sv line 48

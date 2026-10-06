@@ -1,0 +1,61 @@
+# vsim -msgmode both -onfinish stop work.FIFO_tb -gDEPTH=32 -gDATA_WIDTH=8 -gFIFO_PROFESOR=0 
+# Start time: 12:11:00 on Oct 06,2026
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: mique  Hostname: PC_MIQUEL  ProcessID: 22544
+#           Attempting to use alternate WLF file "./wlftfis40x".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftfis40x
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: ../src/FIFO_tb.sv(4): (vopt-2605) empty port name in port list.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# //  Questa Sim-64
+# //  Version 2025.1_2 win64 Apr  7 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.fifo_if(fast)
+# Loading work.utilidades_pkg(fast)
+# Loading work.FIFO_tb_sv_unit(fast)
+# Loading work.FIFO_tb(fast)
+# Secuencia 1: Llenado
+# Secuencia 2: Vaciado
+# [205550000] Cobertura = 99.59 % tras 50 ciclos (objetivo nivel 17)
+# [210550000] Cobertura = 99.59 % tras 100 ciclos (objetivo nivel 17)
+# [215550000] Cobertura = 99.59 % tras 150 ciclos (objetivo nivel 8)
+# [220550000] Cobertura = 99.59 % tras 200 ciclos (objetivo nivel 19)
+# [225550000] Cobertura = 99.59 % tras 250 ciclos (objetivo nivel 15)
+# [230550000] Cobertura = 99.59 % tras 300 ciclos (objetivo nivel 30)
+# [235550000] Cobertura = 99.79 % tras 350 ciclos (objetivo nivel 25)
+# [240550000] Cobertura = 99.79 % tras 400 ciclos (objetivo nivel 28)
+# [245550000] Cobertura = 99.79 % tras 450 ciclos (objetivo nivel 2)
+# [250550000] Cobertura = 99.79 % tras 500 ciclos (objetivo nivel 14)
+# [255550000] Cobertura = 100.00 % tras 550 ciclos (objetivo nivel 22)
+# FIN DEL TEST
+# grado_llenado    : 100.00 %
+# estados_normales : 100.00 %
+# casos_especiales : 100.00 %
+# Cobertura total ($get_coverage): 100.00 %
+# ==================== INFORME DEL SCOREBOARD ====================
+# Transacciones comparadas: 2550
+#   DATA_OUT    aciertos =   2550   errores =      0
+#   F_EMPTY_N   aciertos =   2550   errores =      0
+#   F_FULL_N    aciertos =   2550   errores =      0
+#   USE_DW      aciertos =   2550   errores =      0
+# Esperados pendientes de comparar: 1
+# RESULTADO: EXITO - 2550 comparaciones sin errores
+# ================================================================
+# Fin de la simulacion (WIDTH=8, DEPTH=32, FIFO       propia).
+# ** Note: $finish    : ../src/FIFO_tb.sv(48)
+#    Time: 255750 ns  Iteration: 3  Instance: /FIFO_tb
+# Break at ../src/FIFO_tb.sv line 48
+# Stopped at ../src/FIFO_tb.sv line 48

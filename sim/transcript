@@ -1,87 +1,10 @@
-# //  Questa Sim-64
-# //  Version 2025.1_2 win64 Apr  7 2025
-# //
-# // Unpublished work. Copyright 2025 Siemens
-# //
-# // This material contains trade secrets or otherwise confidential information
-# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
-# // "SISW"), or its licensors. Access to and use of this information is strictly
-# // limited as set forth in the Customer's applicable agreements with SISW.
-# //
-# // This material may not be copied, distributed, or otherwise disclosed outside
-# // of the Customer's facilities without the express written permission of SISW,
-# // and may not be used in any way not expressly authorized by SISW.
-# //
-# do Sim.do
-# 7
-# Sim: load design
-# vsim -voptargs="+acc" -msgmode both -assertdebug -wlfdeleteonquit work.FIFO_tb 
-# Start time: 11:57:15 on Oct 06,2026
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: mique  Hostname: PC_MIQUEL  ProcessID: 22544
-#           Attempting to use alternate WLF file "./wlftb736i8".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftb736i8
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# ** Warning: ../src/FIFO_tb.sv(4): (vopt-2605) empty port name in port list.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=4.
-# Loading sv_std.std
-# Loading work.fifo_if(fast)
-# Loading work.utilidades_pkg(fast)
-# Loading work.FIFO_tb_sv_unit(fast)
-# Loading work.FIFO_tb(fast)
-# Loading work.fifo_if(fast__2)
-# Loading work.FIFO_top_duv(fast)
-# Loading work.FIFO_no_sintetizable(fast)
-# Sim: load wave-file(s)
-# 0
-# Sim: log signals
-# Sim: run ...
-# Secuencia 1: Llenado
-# 1
-run -all
-# Secuencia 2: Vaciado
-# [205550000] Cobertura = 99.07 % tras 50 ciclos (objetivo nivel 64)
-# [210550000] Cobertura = 99.38 % tras 100 ciclos (objetivo nivel 47)
-# [215550000] Cobertura = 99.48 % tras 150 ciclos (objetivo nivel 20)
-# [220550000] Cobertura = 99.48 % tras 200 ciclos (objetivo nivel 61)
-# [225550000] Cobertura = 99.48 % tras 250 ciclos (objetivo nivel 37)
-# [230550000] Cobertura = 99.69 % tras 300 ciclos (objetivo nivel 54)
-# [235550000] Cobertura = 99.69 % tras 350 ciclos (objetivo nivel 24)
-# [240550000] Cobertura = 99.69 % tras 400 ciclos (objetivo nivel 42)
-# [245550000] Cobertura = 99.69 % tras 450 ciclos (objetivo nivel 59)
-# [250550000] Cobertura = 99.90 % tras 500 ciclos (objetivo nivel 44)
-# [255550000] Cobertura = 99.90 % tras 550 ciclos (objetivo nivel 14)
-# [260550000] Cobertura = 99.90 % tras 600 ciclos (objetivo nivel 54)
-# [265550000] Cobertura = 99.90 % tras 650 ciclos (objetivo nivel 45)
-# [270550000] Cobertura = 99.90 % tras 700 ciclos (objetivo nivel 11)
-# [275550000] Cobertura = 99.90 % tras 750 ciclos (objetivo nivel 49)
-# [280550000] Cobertura = 99.90 % tras 800 ciclos (objetivo nivel 45)
-# [285550000] Cobertura = 99.90 % tras 850 ciclos (objetivo nivel 52)
-# [290550000] Cobertura = 99.90 % tras 900 ciclos (objetivo nivel 38)
-# [295550000] Cobertura = 99.90 % tras 950 ciclos (objetivo nivel 46)
-# [300550000] Cobertura = 99.90 % tras 1000 ciclos (objetivo nivel 58)
-# [305550000] Cobertura = 99.90 % tras 1050 ciclos (objetivo nivel 32)
-# [310550000] Cobertura = 99.90 % tras 1100 ciclos (objetivo nivel 17)
-# [315550000] Cobertura = 99.90 % tras 1150 ciclos (objetivo nivel 32)
-# [320550000] Cobertura = 100.00 % tras 1200 ciclos (objetivo nivel 32)
-# FIN DEL TEST
-# grado_llenado    : 100.00 %
-# estados_normales : 100.00 %
-# casos_especiales : 100.00 %
-# Cobertura total ($get_coverage): 100.00 %
-# ==================== INFORME DEL SCOREBOARD ====================
-# Transacciones comparadas: 3200
-#   DATA_OUT    aciertos =   3200   errores =      0
-#   F_EMPTY_N   aciertos =   3200   errores =      0
-#   F_FULL_N    aciertos =   3200   errores =      0
-#   USE_DW      aciertos =   3200   errores =      0
-# Esperados pendientes de comparar: 1
-# RESULTADO: EXITO - 3200 comparaciones sin errores
-# ================================================================
-# Simulacion finalizada exitosamente.
-# ** Note: $finish    : ../src/FIFO_tb.sv(47)
-#    Time: 320750 ns  Iteration: 4  Instance: /FIFO_tb
-# 1
-# Break in Module FIFO_tb at ../src/FIFO_tb.sv line 47
+# End time: 12:11:27 on Oct 06,2026, Elapsed time: 0:00:05
+# Errors: 0, Warnings: 3
+# ==================== RESUMEN DE LA REGRESION ====================
+#   FIFO propia     8 x 32   EXITO - 2550 comparaciones sin errores
+#   FIFO propia    16 x 16   EXITO - 2000 comparaciones sin errores
+#   FIFO propia     4 x 64   EXITO - 3200 comparaciones sin errores
+#   FIFO profesor   8 x 32   EXITO - 2550 comparaciones sin errores
+#   FIFO profesor  16 x 16   EXITO - 2000 comparaciones sin errores
+#   FIFO profesor   4 x 64   EXITO - 3200 comparaciones sin errores
+# =================================================================

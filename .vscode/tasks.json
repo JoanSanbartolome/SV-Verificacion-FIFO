@@ -115,6 +115,38 @@
             "showReuseMessage": true,
             "clear": false
          }
+      },
+      {
+         "label": "Simulate FIFO profesor",
+         "type": "shell",
+         "command": "vsim",
+         "args": ["-do", "set PROFESOR 1; do Sim.do"],
+         "dependsOn": "Compile",
+         "options": { "cwd": "${workspaceFolder}/sim" },
+         "problemMatcher": [],
+         "group": "test",
+         "presentation": { "reveal": "never", "focus": false, "panel": "shared", "showReuseMessage": true, "clear": false }
+      },
+      {
+         "label": "Test dirigido profesor",
+         "type": "shell",
+         "command": "vsim",
+         "args": ["-do", "set top FIFO_tb_v0; do Sim.do"],
+         "dependsOn": "Compile",
+         "options": { "cwd": "${workspaceFolder}/sim" },
+         "problemMatcher": [],
+         "group": "test",
+         "presentation": { "reveal": "never", "focus": false, "panel": "shared", "showReuseMessage": true, "clear": false }
+      },
+      {
+         "label": "Regresion",
+         "type": "shell",
+         "command": "vsim",
+         "args": ["-c", "-do", "Regresion.do"],
+         "options": { "cwd": "${workspaceFolder}/sim" },
+         "problemMatcher": [],
+         "group": "test",
+         "presentation": { "reveal": "always", "focus": true, "panel": "shared", "showReuseMessage": true, "clear": false }
       }
    ],
    "inputs": [

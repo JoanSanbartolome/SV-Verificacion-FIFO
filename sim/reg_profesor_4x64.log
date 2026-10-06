@@ -1,0 +1,60 @@
+# vsim -msgmode both -onfinish stop work.FIFO_tb -gDEPTH=64 -gDATA_WIDTH=4 -gFIFO_PROFESOR=1 
+# Start time: 12:11:22 on Oct 06,2026
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: mique  Hostname: PC_MIQUEL  ProcessID: 22544
+#           Attempting to use alternate WLF file "./wlftnfes6k".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftnfes6k
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: ../src/FIFO_tb.sv(4): (vopt-2605) empty port name in port list.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading sv_std.std
+# Loading work.fifo_if(fast)
+# Loading work.utilidades_pkg(fast)
+# Loading work.FIFO_tb_sv_unit(fast)
+# Loading work.FIFO_tb(fast)
+# Secuencia 1: Llenado
+# Secuencia 2: Vaciado
+# [205550000] Cobertura = 99.07 % tras 50 ciclos (objetivo nivel 64)
+# [210550000] Cobertura = 99.38 % tras 100 ciclos (objetivo nivel 47)
+# [215550000] Cobertura = 99.48 % tras 150 ciclos (objetivo nivel 20)
+# [220550000] Cobertura = 99.48 % tras 200 ciclos (objetivo nivel 61)
+# [225550000] Cobertura = 99.48 % tras 250 ciclos (objetivo nivel 37)
+# [230550000] Cobertura = 99.69 % tras 300 ciclos (objetivo nivel 54)
+# [235550000] Cobertura = 99.69 % tras 350 ciclos (objetivo nivel 24)
+# [240550000] Cobertura = 99.69 % tras 400 ciclos (objetivo nivel 42)
+# [245550000] Cobertura = 99.69 % tras 450 ciclos (objetivo nivel 59)
+# [250550000] Cobertura = 99.90 % tras 500 ciclos (objetivo nivel 44)
+# [255550000] Cobertura = 99.90 % tras 550 ciclos (objetivo nivel 14)
+# [260550000] Cobertura = 99.90 % tras 600 ciclos (objetivo nivel 54)
+# [265550000] Cobertura = 99.90 % tras 650 ciclos (objetivo nivel 45)
+# [270550000] Cobertura = 99.90 % tras 700 ciclos (objetivo nivel 11)
+# [275550000] Cobertura = 99.90 % tras 750 ciclos (objetivo nivel 49)
+# [280550000] Cobertura = 99.90 % tras 800 ciclos (objetivo nivel 45)
+# [285550000] Cobertura = 99.90 % tras 850 ciclos (objetivo nivel 52)
+# [290550000] Cobertura = 99.90 % tras 900 ciclos (objetivo nivel 38)
+# [295550000] Cobertura = 99.90 % tras 950 ciclos (objetivo nivel 46)
+# [300550000] Cobertura = 99.90 % tras 1000 ciclos (objetivo nivel 58)
+# [305550000] Cobertura = 99.90 % tras 1050 ciclos (objetivo nivel 32)
+# [310550000] Cobertura = 99.90 % tras 1100 ciclos (objetivo nivel 17)
+# [315550000] Cobertura = 99.90 % tras 1150 ciclos (objetivo nivel 32)
+# [320550000] Cobertura = 100.00 % tras 1200 ciclos (objetivo nivel 32)
+# FIN DEL TEST
+# grado_llenado    : 100.00 %
+# estados_normales : 100.00 %
+# casos_especiales : 100.00 %
+# Cobertura total ($get_coverage): 100.00 %
+# ==================== INFORME DEL SCOREBOARD ====================
+# Transacciones comparadas: 3200
+#   DATA_OUT    aciertos =   3200   errores =      0
+#   F_EMPTY_N   aciertos =   3200   errores =      0
+#   F_FULL_N    aciertos =   3200   errores =      0
+#   USE_DW      aciertos =   3200   errores =      0
+# Esperados pendientes de comparar: 1
+# RESULTADO: EXITO - 3200 comparaciones sin errores
+# ================================================================
+# Fin de la simulacion (WIDTH=4, DEPTH=64, FIFO del profesor).
+# ** Note: $finish    : ../src/FIFO_tb.sv(48)
+#    Time: 320750 ns  Iteration: 4  Instance: /FIFO_tb
+# Break at ../src/FIFO_tb.sv line 48
+# Stopped at ../src/FIFO_tb.sv line 48
