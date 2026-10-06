@@ -13,9 +13,9 @@ class FIFO_Coverage #(
 
     grado_llenado:coverpoint tr.use_dw
       {
-        bins intermedio[] = {[1:31]};
-        bins corner_case_vacio ={0};
-        bins corner_case_lleno ={32};
+        bins intermedio[] = {[1:DEPTH-1]};
+        bins corner_case_vacio = {0};
+        bins corner_case_lleno = {DEPTH};
       }
    
     flags: coverpoint {tr.empty, tr.full}

@@ -9,11 +9,11 @@ class FIFO_Scoreboard #(
     // Guarda las transacciones predecidas por el predictor
     utilidades_pkg::FIFO_Transaction #(WIDTH,DEPTH) transaction_predicted; 
 
-    mailbox #(FIFO_Transaction) mailbox_entradas;
-    mailbox #(FIFO_Transaction) mailbox_salidas;
+    mailbox #(FIFO_Transaction #(WIDTH,DEPTH)) mailbox_entradas;
+    mailbox #(FIFO_Transaction #(WIDTH,DEPTH)) mailbox_salidas;
 
     // Mailbox que hace de buffer para las transacciones expected
-    mailbox #(FIFO_Transaction) mailbox_predecidas; 
+    mailbox #(FIFO_Transaction #(WIDTH,DEPTH)) mailbox_predecidas; 
 
     logic [WIDTH-1:0] FIFO_ideal[$]; 
     logic [WIDTH-1:0] ultimo_dato_out = '0;   // Guarda el dato de salida anterior para los casos que no deberia cambiar

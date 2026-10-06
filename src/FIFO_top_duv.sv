@@ -6,7 +6,7 @@ module FIFO_top_duv #(
 );
 
   // Instancia del DUV
-  FIFO_sintetizable #(
+  FIFO_no_sintetizable #(
       .WIDTH(WIDTH),
       .DEPTH(DEPTH)
   ) duv (

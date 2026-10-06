@@ -6,3 +6,4 @@
 ../src/fifo_if.sv
 ../src/FIFO_top_duv.sv
 ../src/FIFO_tb.sv
+../src/FIFO_tb_v0.sv

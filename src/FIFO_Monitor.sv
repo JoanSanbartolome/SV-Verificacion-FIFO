@@ -11,9 +11,9 @@ class FIFO_Monitor #(
     utilidades_pkg::FIFO_Transaction #(WIDTH,DEPTH) transaction_scb_out;
 
     //Declaración de un mailbox: lo haremos particularizando a elementos transmitidos de tipo handle FIFO_Transaction
-    mailbox #(FIFO_Transaction) mailbox_coverage;
-    mailbox #(FIFO_Transaction) mailbox_predictor;
-    mailbox #(FIFO_Transaction) mailbox_evaluator;
+    mailbox #(FIFO_Transaction #(WIDTH,DEPTH)) mailbox_coverage;
+    mailbox #(FIFO_Transaction #(WIDTH,DEPTH)) mailbox_predictor;
+    mailbox #(FIFO_Transaction #(WIDTH,DEPTH)) mailbox_evaluator;
 
     virtual fifo_if#(WIDTH,DEPTH).monitor vif_monitor;
 

@@ -3,8 +3,8 @@ import utilidades_pkg::*;
 
 module FIFO_tb();
 
-  parameter int DATA_WIDTH = 8;
-  parameter int DEPTH = 32;
+  parameter int DATA_WIDTH = 4;
+  parameter int DEPTH = 64;
 
   logic clk;
 
