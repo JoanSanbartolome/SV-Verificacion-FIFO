@@ -16,122 +16,12 @@
 # 7
 # Sim: load design
 # vsim -voptargs="+acc" -msgmode both -assertdebug -wlfdeleteonquit work.FIFO_tb 
-# Start time: 10:21:44 on Oct 06,2026
+# Start time: 10:35:05 on Oct 06,2026
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: mique  Hostname: PC_MIQUEL  ProcessID: 22544
-#           Attempting to use alternate WLF file "./wlftcja50z".
+#           Attempting to use alternate WLF file "./wlft86m59x".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftcja50z
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
-# ** Note: (vopt-143) Recognized 1 FSM in module "FIFO_sintetizable(fast)".
-# ** Warning: ../src/FIFO_tb.sv(4): (vopt-2605) empty port name in port list.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=4.
-# Loading sv_std.std
-# Loading work.fifo_if(fast)
-# Loading work.utilidades_pkg(fast)
-# Loading work.FIFO_tb_sv_unit(fast)
-# Loading work.FIFO_tb(fast)
-# Loading work.fifo_if(fast__2)
-# Loading work.FIFO_top_duv(fast)
-# Loading work.FIFO_sintetizable(fast)
-# Loading work.ram_dp(fast)
-# Sim: load wave-file(s)
-# 0
-# Sim: log signals
-# Sim: run ...
-# Secuencia 1: Llenado
-# 1
-run -all
-# Secuencia 2: Vaciado
-# FIN DEL TEST
-# ==================== INFORME DEL SCOREBOARD ====================
-# Transacciones comparadas: 10000
-#   DATA_OUT    aciertos =  40000   errores =      0
-#   F_EMPTY_N   aciertos =      0   errores =      0
-#   F_FULL_N    aciertos =      0   errores =      0
-#   USE_DW      aciertos =      0   errores =      0
-# Esperados pendientes de comparar: 1
-# RESULTADO: EXITO - 10000 comparaciones sin errores
-# ================================================================
-# Simulacion finalizada exitosamente.
-# ** Note: $finish    : ../src/FIFO_tb.sv(47)
-#    Time: 1000750 ns  Iteration: 4  Instance: /FIFO_tb
-# 1
-# Break in Module FIFO_tb at ../src/FIFO_tb.sv line 47
-do Sim.do
-# 7
-# Sim: load design
-# End time: 10:23:35 on Oct 06,2026, Elapsed time: 0:01:51
-# Errors: 0, Warnings: 4
-# vsim -voptargs="+acc" -msgmode both -assertdebug -wlfdeleteonquit work.FIFO_tb 
-# Start time: 10:23:35 on Oct 06,2026
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: mique  Hostname: PC_MIQUEL  ProcessID: 22544
-#           Attempting to use alternate WLF file "./wlftceje2i".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftceje2i
-# ** Note: (vsim-8009) Loading existing optimized design _opt16
-# Loading sv_std.std
-# Loading work.fifo_if(fast)
-# Loading work.utilidades_pkg(fast)
-# Loading work.FIFO_tb_sv_unit(fast)
-# Loading work.FIFO_tb(fast)
-# Loading work.fifo_if(fast__2)
-# Loading work.FIFO_top_duv(fast)
-# Loading work.FIFO_sintetizable(fast)
-# Loading work.ram_dp(fast)
-# Sim: load wave-file(s)
-# 0
-# Sim: log signals
-# Sim: run ...
-# Secuencia 1: Llenado
-# 1
-run -all
-# Secuencia 2: Vaciado
-# FIN DEL TEST
-# ==================== INFORME DEL SCOREBOARD ====================
-# Transacciones comparadas: 10000
-#   DATA_OUT    aciertos =  40000   errores =      0
-#   F_EMPTY_N   aciertos =      0   errores =      0
-#   F_FULL_N    aciertos =      0   errores =      0
-#   USE_DW      aciertos =      0   errores =      0
-# Esperados pendientes de comparar: 1
-# RESULTADO: EXITO - 10000 comparaciones sin errores
-# ================================================================
-# Simulacion finalizada exitosamente.
-# ** Note: $finish    : ../src/FIFO_tb.sv(47)
-#    Time: 1000750 ns  Iteration: 4  Instance: /FIFO_tb
-# 1
-# Break in Module FIFO_tb at ../src/FIFO_tb.sv line 47
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt16
-# Loading work.fifo_if(fast)
-# Loading work.utilidades_pkg(fast)
-# Loading work.FIFO_tb_sv_unit(fast)
-# Loading work.FIFO_tb(fast)
-# Loading work.fifo_if(fast__2)
-# Loading work.FIFO_top_duv(fast)
-# Loading work.FIFO_sintetizable(fast)
-# Loading work.ram_dp(fast)
-do Comp.do
-# 0
-# filelist.txt
-# ** Warning: ../src/FIFO_tb.sv(4): (vlog-2605) empty port name in port list.
-# ** Warning: ../src/FIFO_tb.sv(4): (vlog-2605) empty port name in port list.
-do Sim.do
-# 7
-# Sim: load design
-# End time: 10:24:53 on Oct 06,2026, Elapsed time: 0:01:18
-# Errors: 0, Warnings: 0
-# vsim -voptargs="+acc" -msgmode both -assertdebug -wlfdeleteonquit work.FIFO_tb 
-# Start time: 10:24:53 on Oct 06,2026
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: mique  Hostname: PC_MIQUEL  ProcessID: 22544
-#           Attempting to use alternate WLF file "./wlftyfevaj".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftyfevaj
+#           Using alternate file: ./wlft86m59x
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
 # ** Warning: ../src/FIFO_tb.sv(4): (vopt-2605) empty port name in port list.
@@ -153,20 +43,81 @@ do Sim.do
 # 1
 run -all
 # Secuencia 2: Vaciado
+# [45550000] Cobertura = 95.38 % tras 50 ciclos (objetivo nivel 17)
+# [50550000] Cobertura = 95.38 % tras 100 ciclos (objetivo nivel 17)
+# [55550000] Cobertura = 95.38 % tras 150 ciclos (objetivo nivel 8)
+# [60550000] Cobertura = 95.38 % tras 200 ciclos (objetivo nivel 19)
+# [65550000] Cobertura = 95.38 % tras 250 ciclos (objetivo nivel 15)
+# [70550000] Cobertura = 95.38 % tras 300 ciclos (objetivo nivel 30)
+# [75550000] Cobertura = 95.38 % tras 350 ciclos (objetivo nivel 25)
+# [80550000] Cobertura = 95.38 % tras 400 ciclos (objetivo nivel 28)
+# [85550000] Cobertura = 95.59 % tras 450 ciclos (objetivo nivel 2)
+# [90550000] Cobertura = 95.59 % tras 500 ciclos (objetivo nivel 14)
+# [95550000] Cobertura = 95.59 % tras 550 ciclos (objetivo nivel 22)
+# [100550000] Cobertura = 95.59 % tras 600 ciclos (objetivo nivel 13)
+# [105550000] Cobertura = 95.59 % tras 650 ciclos (objetivo nivel 28)
+# [110550000] Cobertura = 95.59 % tras 700 ciclos (objetivo nivel 5)
+# [115550000] Cobertura = 95.59 % tras 750 ciclos (objetivo nivel 14)
+# [120550000] Cobertura = 95.59 % tras 800 ciclos (objetivo nivel 17)
+# [125550000] Cobertura = 95.59 % tras 850 ciclos (objetivo nivel 4)
+# [130550000] Cobertura = 95.59 % tras 900 ciclos (objetivo nivel 13)
+# [135550000] Cobertura = 95.59 % tras 950 ciclos (objetivo nivel 19)
+# [140550000] Cobertura = 95.59 % tras 1000 ciclos (objetivo nivel 28)
+# [145550000] Cobertura = 95.59 % tras 1050 ciclos (objetivo nivel 4)
+# [150550000] Cobertura = 95.59 % tras 1100 ciclos (objetivo nivel 18)
+# [155550000] Cobertura = 95.59 % tras 1150 ciclos (objetivo nivel 27)
+# [160550000] Cobertura = 95.59 % tras 1200 ciclos (objetivo nivel 27)
+# [165550000] Cobertura = 95.59 % tras 1250 ciclos (objetivo nivel 17)
+# [170550000] Cobertura = 95.59 % tras 1300 ciclos (objetivo nivel 10)
+# [175550000] Cobertura = 95.59 % tras 1350 ciclos (objetivo nivel 10)
+# [180550000] Cobertura = 95.59 % tras 1400 ciclos (objetivo nivel 10)
+# [185550000] Cobertura = 95.59 % tras 1450 ciclos (objetivo nivel 18)
+# [190550000] Cobertura = 95.59 % tras 1500 ciclos (objetivo nivel 28)
+# [195550000] Cobertura = 95.59 % tras 1550 ciclos (objetivo nivel 27)
+# [200550000] Cobertura = 95.59 % tras 1600 ciclos (objetivo nivel 23)
+# [205550000] Cobertura = 95.59 % tras 1650 ciclos (objetivo nivel 16)
+# [210550000] Cobertura = 95.59 % tras 1700 ciclos (objetivo nivel 30)
+# [215550000] Cobertura = 95.59 % tras 1750 ciclos (objetivo nivel 7)
+# [220550000] Cobertura = 95.59 % tras 1800 ciclos (objetivo nivel 30)
+# [225550000] Cobertura = 95.59 % tras 1850 ciclos (objetivo nivel 18)
+# [230550000] Cobertura = 95.59 % tras 1900 ciclos (objetivo nivel 2)
+# [235550000] Cobertura = 95.59 % tras 1950 ciclos (objetivo nivel 15)
+# [240550000] Cobertura = 95.59 % tras 2000 ciclos (objetivo nivel 9)
+# [245550000] Cobertura = 95.59 % tras 2050 ciclos (objetivo nivel 17)
+# [250550000] Cobertura = 95.59 % tras 2100 ciclos (objetivo nivel 11)
+# [255550000] Cobertura = 95.59 % tras 2150 ciclos (objetivo nivel 8)
+# [260550000] Cobertura = 95.59 % tras 2200 ciclos (objetivo nivel 32)
+# [265550000] Cobertura = 95.59 % tras 2250 ciclos (objetivo nivel 12)
+# [270550000] Cobertura = 95.59 % tras 2300 ciclos (objetivo nivel 10)
+# [275550000] Cobertura = 95.59 % tras 2350 ciclos (objetivo nivel 18)
+# [280550000] Cobertura = 95.59 % tras 2400 ciclos (objetivo nivel 8)
+# [285550000] Cobertura = 95.59 % tras 2450 ciclos (objetivo nivel 14)
+# [290550000] Cobertura = 95.59 % tras 2500 ciclos (objetivo nivel 1)
+# [295550000] Cobertura = 95.59 % tras 2550 ciclos (objetivo nivel 27)
+# [300550000] Cobertura = 95.59 % tras 2600 ciclos (objetivo nivel 20)
+# [305550000] Cobertura = 95.59 % tras 2650 ciclos (objetivo nivel 6)
+# [310550000] Cobertura = 95.59 % tras 2700 ciclos (objetivo nivel 20)
+# [315550000] Cobertura = 95.59 % tras 2750 ciclos (objetivo nivel 8)
+# [320550000] Cobertura = 95.59 % tras 2800 ciclos (objetivo nivel 5)
+# [325550000] Cobertura = 100.00 % tras 2850 ciclos (objetivo nivel 0)
 # FIN DEL TEST
+# grado_llenado    : 100.00 %
+# estados_normales : 100.00 %
+# casos_especiales : 100.00 %
+# Cobertura total ($get_coverage): 100.00 %
 # ==================== INFORME DEL SCOREBOARD ====================
-# Transacciones comparadas: 10000
-#   DATA_OUT    aciertos =  10000   errores =      0
-#   F_EMPTY_N   aciertos =  10000   errores =      0
-#   F_FULL_N    aciertos =  10000   errores =      0
-#   USE_DW      aciertos =  10000   errores =      0
+# Transacciones comparadas: 3250
+#   DATA_OUT    aciertos =   3250   errores =      0
+#   F_EMPTY_N   aciertos =   3250   errores =      0
+#   F_FULL_N    aciertos =   3250   errores =      0
+#   USE_DW      aciertos =   3250   errores =      0
 # Esperados pendientes de comparar: 1
-# RESULTADO: EXITO - 10000 comparaciones sin errores
+# RESULTADO: EXITO - 3250 comparaciones sin errores
 # ================================================================
 # Simulacion finalizada exitosamente.
 # ** Note: $finish    : ../src/FIFO_tb.sv(47)
-#    Time: 1000750 ns  Iteration: 4  Instance: /FIFO_tb
+#    Time: 325750 ns  Iteration: 3  Instance: /FIFO_tb
 # 1
 # Break in Module FIFO_tb at ../src/FIFO_tb.sv line 47
-# End time: 10:25:30 on Oct 06,2026, Elapsed time: 0:00:37
+# End time: 10:36:26 on Oct 06,2026, Elapsed time: 0:01:21
 # Errors: 0, Warnings: 4
